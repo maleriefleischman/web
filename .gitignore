@@ -4,4 +4,5 @@ node_modules*
 config*
 #ignore ssh files
 *.sh
-
+#ignore phpstorm specific file
+.idea*
