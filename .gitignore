@@ -2,7 +2,7 @@
 node_modules*
 #ignore config files
 config*
-#ignore ssh files
+#ignore shell files
 *.sh
 #ignore phpstorm specific file
 .idea*
