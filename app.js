@@ -37,7 +37,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //bootstrap
 app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules','bootstrap','dist')));
+//jquery
 app.use('/jquery', express.static(path.join(__dirname, 'node_modules','jquery','dist')));
+
+//routers
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
