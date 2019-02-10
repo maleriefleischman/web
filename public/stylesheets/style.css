@@ -3,6 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.multi-collapse{
+    margin-top: 1.5rem;
+}
+
 a {
   color: #00B7FF;
 }

@@ -9,15 +9,17 @@ html
 
 
     body
-        .container-fluid
-            nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
                 a.navbar-brand(href="#") Malerie Fleischman
-                button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbar", aria-controls="navbar", aria-expanded="false", aria-label="Toggle navigation")
+                button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
                     span.navbar-toggler-icon
                 .collapse.navbar-collapse(id="navbar")
                     .navbar-nav
-                        //
-                            a.nav-item.nav-link(href="#") TBD
-                            a.nav-item.nav-link(href="#") TBD
-                            a.nav-item.nav-link(href="#") TBD
-            block content
+                        a.nav-item.nav-link.active(data-toggle="collapse" href="#about" role="button" aria-expanded="true" aria-controls="about" ) About
+                        a.nav-item.nav-link(data-toggle="collapse" href="#experience" role="button" aria-expanded="false" aria-controls="experience" ) Experience
+                        a.nav-item.nav-link(data-toggle="collapse" href="#skills" role="button" aria-expanded="false" aria-controls="skills" ) Skills
+                        a.nav-item.nav-link(data-toggle="collapse" href="#awards" role="button" aria-expanded="false" aria-controls="awards" ) Awards
+                        a.nav-item.nav-link(data-toggle="collapse" href="#projects" role="button" aria-expanded="false" aria-controls="projects" ) Projects
+                        a.nav-item.nav-link(data-toggle="collapse" href="#education" role="button" aria-expanded="false" aria-controls="education" ) Eduction
+            .container-fluid
+                block content
