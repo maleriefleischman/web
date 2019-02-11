@@ -3,19 +3,19 @@ html
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
-        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/custom.css')
         script(src='/jquery/jquery.min.js')
         script(src='/bootstrap/js/bootstrap.min.js')
 
 
     body
-            nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
+            nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-gradient-primary3
                 a.navbar-brand(href="#") Malerie Fleischman
                 button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
                     span.navbar-toggler-icon
                 .collapse.navbar-collapse(id="navbar")
                     .navbar-nav
-                        a.nav-item.nav-link.active(data-toggle="collapse" href="#about" role="button" aria-expanded="true" aria-controls="about" ) About
+                        a.nav-item.nav-link(href="#about" role="button" aria-expanded="true" aria-controls="about" ) About
                         a.nav-item.nav-link(data-toggle="collapse" href="#experience" role="button" aria-expanded="false" aria-controls="experience" ) Experience
                         a.nav-item.nav-link(data-toggle="collapse" href="#skills" role="button" aria-expanded="false" aria-controls="skills" ) Skills
                         a.nav-item.nav-link(data-toggle="collapse" href="#awards" role="button" aria-expanded="false" aria-controls="awards" ) Awards

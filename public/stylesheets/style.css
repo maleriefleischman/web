@@ -1,12 +1,20 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+/*h2{
+    text-shadow: -1px 0 #A76300, 0 1px #A76300, 1px 0 #A76300, 0 -1px #A76300;
+}*/
 
 .multi-collapse{
     margin-top: 1.5rem;
 }
 
-a {
-  color: #00B7FF;
+.card a {
+  color: #A76300 !important;
+}
+
+a:hover{
+    color: #FF9700 !important;
 }
