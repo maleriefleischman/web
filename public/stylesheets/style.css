@@ -3,16 +3,8 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-/*h2{
-    text-shadow: -1px 0 #A76300, 0 1px #A76300, 1px 0 #A76300, 0 -1px #A76300;
-}*/
-
-.multi-collapse{
-    margin-top: 1.5rem;
-}
-
 .card a {
-  color: #A76300;
+  color: #00488D;
 }
 
 a:hover{
@@ -26,7 +18,16 @@ a:hover{
     width: 100%;
 }
 
-.back{
+.res{
     margin-top: 1.5rem;
-    z-index: -1;
+
 }
+
+.back{
+    margin: 1.5rem;
+}
+
+.col{
+    height: 100%;
+}
+
