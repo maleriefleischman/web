@@ -1,0 +1,21 @@
+$enable-gradients: (
+    enable: true
+);
+
+$theme-colors: (
+  "primary": #138BFF,
+  "primary1": #AAD5FF,
+  "primary2": #7BBEFF,
+  "primary3": #00488D,
+  "primary4": #00376C,
+  "complementary": #FF9700,
+  "complementary1": #FFDAA4,
+  "complementary2": #FFC570,
+  "complementary3": #D98000,
+  "complementary4": #A76300,
+
+
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
