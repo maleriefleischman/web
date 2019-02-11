@@ -12,9 +12,21 @@ body {
 }
 
 .card a {
-  color: #A76300 !important;
+  color: #A76300;
 }
 
 a:hover{
     color: #FF9700 !important;
+}
+
+
+.spacer{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.back{
+    margin-top: 1.5rem;
+    z-index: -1;
 }

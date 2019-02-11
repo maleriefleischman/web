@@ -3,7 +3,7 @@ extends layout
 block content
     .row
         .col
-            .collapse.show.multi-collapse(id="about")
+            .collapse.multi-collapse(id="about")
                 .card.card-body.bg-gradient-primary1.border.border-primary4
                     h2.text-dark About
                 .card.card-body.border.border-primary1
@@ -39,7 +39,7 @@ block content
                     p MySQL/MSSQL. HTTP, TLS. HTML / CSS, JavaScript, jQuery, Node.js, Express, React, Bootstrap, PUG, C++. GitHub, Jira. Microsoft Sql Server Management Studio. Deployment in Azure WebApps, Active Directory Authentication. Command Line / PowerShell / Windows. Linux / Ubuntu / Mac / Terminal.
 
 
-            .collapse.multi-collapse(id="awards")
+            //.collapse.multi-collapse(id="awards")
                 .card.card-body.bg-gradient-primary1.border.border-primary4
                     h2.text-dark Awards
                 .card.card-body.border.border-primary1
@@ -69,3 +69,15 @@ block content
                     h3 University of Washington, Seattle WA
                     p 2010 - 2014
                     p BA Environmental Studies
+
+    .row.back
+        .col-2
+            .spacer.bg-complementary1.border.border-complementary3
+        .col-2
+            .spacer.bg-complementary2.border.border-complementary4
+        .col-4
+            img.spacer(src="/images/malerie.jpg" alt="Malerie")
+        .col-2
+            .spacer.bg-primary2.border.border-primary4
+        .col-2
+            .spacer.bg-primary1.border.border-primary3
