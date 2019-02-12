@@ -31,3 +31,24 @@ a:hover{
     height: 100%;
 }
 
+#spacer-1:hover{
+    /*background-color: #D98000 !important;*/
+    background-image: linear-gradient(#FFDAA4, #FFC570, #FF9700);
+
+    /*border-color: #FFDAA4 !important;*/
+}
+
+#spacer-2:hover{
+    background-image: linear-gradient(#FFDAA4, #FFC570, #FF9700);
+    /*border-color: #FFC570 !important;*/
+}
+
+#spacer-3:hover{
+    background-image: linear-gradient(#AAD5FF, #7BBEFF, #138BFF);
+   /* border-color: #AAD5FF !important;*/
+}
+
+#spacer-4:hover{
+    background-image: linear-gradient(#AAD5FF, #7BBEFF, #138BFF);
+    /*border-color: #7BBEFF !important;*/
+}

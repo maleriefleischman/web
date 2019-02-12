@@ -3,15 +3,15 @@ extends layout
 block content
     .row.back
         .col-2
-            .spacer.bg-complementary1.border.border-complementary3
+            .spacer.rounded.bg-complementary1.border.border-complementary3(id="spacer-1")
         .col-2
-            .spacer.bg-complementary2.border.border-complementary4
+            .spacer.rounded.bg-complementary2.border.border-complementary4(id="spacer-2")
         .col-4
-            img.spacer(src="/images/malerie.jpg" alt="Malerie")
+            img.spacer.rounded(src="/images/malerie.jpg" alt="Malerie")
         .col-2
-            .spacer.bg-primary2.border.border-primary4
+            .spacer.rounded.bg-primary2.border.border-primary4(id="spacer-3")
         .col-2
-            .spacer.bg-primary1.border.border-primary3
+            .spacer.rounded.bg-primary1.border.border-primary3(id="spacer-4")
     .row.res
         .col
             .card.card-body.bg-primary1.border.border-primary3(id="about")
@@ -22,6 +22,10 @@ block content
         .col
             .card.card-body.bg-primary2.border.border-primary4(id="experience")
                 h2.text-dark Experience
+            .card.card-body.border.border-primary1
+                h3 University of Washington, UAA: IT - Web Computing Specialist
+                p February 2019 - Present
+                p Full stack Web Development; maintaining and expanding upon cross department internal tools built in Javascript with Node.js Express.
             .card.card-body.border.border-primary1
                 h3 Blueprint Technologies, Bellevue WA - Web Development and Technical Support Representative
                 p October  2016 - Present
@@ -48,15 +52,16 @@ block content
             .card.card-body.border.border-primary1
                 p MySQL/MSSQL. HTTP, TLS. HTML / CSS, JavaScript, jQuery, Node.js, Express, React, Bootstrap, PUG, C++. GitHub, Jira. Microsoft Sql Server Management Studio. Deployment in Azure WebApps, Active Directory Authentication. Command Line / PowerShell / Windows. Linux / Ubuntu / Mac / Terminal.
         .col
-            .card.card-body.bg-complementary1.border.border-complementary3(id="projects")
+            .card.card-body.bg-primary1.border.border-primary3(id="projects")
                 h2.text-dark Projects
             .card.card-body.border.border-primary1
                 p
                     a(href="https://github.com/maleriefleischman") GitHub
                 p
-                    a(href="https://codepen.io/maleriefleishman") CodePen
+                    a(href="https://codepen.io/maleriefleischman") CodePen
         .col
-            .card.card-body.bg-primary2.border.border-primary4(id="education")
+            .card.card-body.bg-complementary2.border.border-complementary4(id="education")
+                //.card.card-body.bg-complementary1.border.border-complementary3(id="education")
                 h2.text-dark Education
             .card.card-body.border.border-primary1
                 h3 University of Washington, Seattle WA
