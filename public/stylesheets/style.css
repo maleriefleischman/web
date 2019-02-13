@@ -31,3 +31,10 @@ a:hover{
     height: 100%;
 }
 
+.spacer-yel:hover{
+    background-image: linear-gradient(#FFDAA4, #FFC570, #FF9700);
+}
+
+.spacer-blue:hover{
+    background-image: linear-gradient(#AAD5FF, #7BBEFF, #138BFF);
+}
