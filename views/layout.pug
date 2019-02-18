@@ -9,16 +9,17 @@ html
 
 
     body
-            nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-gradient-primary3
-                a.navbar-brand(href="#") Malerie Fleischman
-                button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
-                    span.navbar-toggler-icon
-                .collapse.navbar-collapse(id="navbar")
-                    .navbar-nav
-                        a.nav-item.nav-link(href="#about") About
-                        a.nav-item.nav-link(href="#experience") Experience
+        nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-gradient-primary3
+            a.navbar-brand(href="/") Malerie Fleischman
+            button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            .collapse.navbar-collapse(id="navbar")
+                .navbar-nav
+                    a.nav-item.nav-link(href="/timer") React Timer
+                      //  a.nav-item.nav-link(href="#experience") Experience
                         a.nav-item.nav-link(href="#skills" role="button") Skills
                         a.nav-item.nav-link(href="#projects" role="button") Projects
                         a.nav-item.nav-link(href="#education" ) Eduction
-            .container-fluid
-                block content
+        .container-fluid
+            block content
+        block footer_scripts
