@@ -38,3 +38,7 @@ a:hover{
 .spacer-blue:hover{
     background-image: linear-gradient(#AAD5FF, #7BBEFF, #138BFF);
 }
+
+#root{
+    margin: 2rem;
+}
