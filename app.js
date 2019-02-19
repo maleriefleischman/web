@@ -39,6 +39,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules','bootstrap','dist')));
 //jquery
 app.use('/jquery', express.static(path.join(__dirname, 'node_modules','jquery','dist')));
+//jquery-validaiton
+app.use('/jquery-validation', express.static(path.join(__dirname, 'node_modules','jquery-validation','dist')));
 
 //routers
 app.use('/', indexRouter);

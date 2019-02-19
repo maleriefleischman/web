@@ -1,0 +1,59 @@
+extends layout.pug
+
+block content
+
+    div(id="beer")
+
+        h1.text-center Beer is Life. How Much Can You Take?
+
+        h2.text-center So You Want to Live Off of Beer...
+        p Why consume anything other than beer? Give me your Sex, Height, and Weight and how many calories are in your beer of choice and I'll let you know how many beers it's gonna take to keep you going. </p>
+
+
+        form(id="form")
+            .form-group
+                label(for="height") Height (in):
+                input(type="number" class="form-control" name="height"  id="height" required)
+
+            .form-group
+                label(for="weight") Weight (lbs):
+                input(type="number" class="form-control" name="weight"  id="weight" required)
+
+
+            fieldset
+                legend Current Sex
+                .form-group
+                    .form-check
+                        input(type="radio" class="form-check-input" name="sex" id="male" required)
+                        label(for="male" class="form-check-label") Male
+
+                    .form-check
+                        input(type="radio" class="form-check-input" name="sex" id="female" required)
+                        label(for="female" class="form-check-label") Female
+
+
+            .form-group
+                label(for="cals") Calories in the beer you want to drink:
+                input(type="number" class="form-control" name="cals" id="cals" required)
+
+
+            button(class="btn btn-primary" type="submit" id="submit") Drink!
+
+        img.opaque(src="/images/bubs.png" alt="bubs")
+
+        div(id="resultsmodal" class="modal" tabindex="-1" role="dialog")
+            div(class="modal-dialog" role="document")
+                .modal-content
+                    .modal-header
+                        h5(class="modal-title") Total Beers Per Day
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+
+                    .modal-body
+                        p(class="modal-text" name="final-results" id="result")
+                    .modal-footer
+                    button(type="button" class="btn btn-primary" data-dismiss="modal") Close
+
+block footer_scripts
+    script(src="/jquery-validation/jquery.validate.min.js")
+    script(src='/javascripts/app/jquery/beer.js')

@@ -6,6 +6,7 @@ html
         link(rel='stylesheet', href='/stylesheets/custom.css')
         script(src='/jquery/jquery.min.js')
         script(src='/bootstrap/js/bootstrap.min.js')
+        script(src='/jquery/beer.js')
 
 
     body
@@ -16,10 +17,7 @@ html
             .collapse.navbar-collapse(id="navbar")
                 .navbar-nav
                     a.nav-item.nav-link(href="/timer") React Timer
-                      //  a.nav-item.nav-link(href="#experience") Experience
-                        a.nav-item.nav-link(href="#skills" role="button") Skills
-                        a.nav-item.nav-link(href="#projects" role="button") Projects
-                        a.nav-item.nav-link(href="#education" ) Eduction
+                    a.nav-item.nav-link(href="/beer") Jquery Beer Calculator
         .container-fluid
             block content
         block footer_scripts
