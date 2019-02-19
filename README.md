@@ -9,4 +9,3 @@ TBD
 ## How It's Made
 
 This project is built on Node.js express and runs on AWS.
-
