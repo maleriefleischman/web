@@ -41,6 +41,8 @@ app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules','bootst
 app.use('/jquery', express.static(path.join(__dirname, 'node_modules','jquery','dist')));
 //jquery-validaiton
 app.use('/jquery-validation', express.static(path.join(__dirname, 'node_modules','jquery-validation','dist')));
+//scroll reveal
+app.use('/aos', express.static(path.join(__dirname, 'node_modules','aos','dist')));
 
 //routers
 app.use('/', indexRouter);
