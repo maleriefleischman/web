@@ -1,14 +1,17 @@
 doctype html
 html
     head
+        meta(name="viewport" content="width=device-width", "initial-scale=1", "shrink-to-fit=no")
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='/stylesheets/custom.css')
+        link(rel='stylesheet', href="/aos/aos.css")
         script(src='/jquery/jquery.min.js')
         script(src='/bootstrap/js/bootstrap.min.js')
+        script(src='/aos/aos.js')
 
 
-    body.main-gradient
+    body
         nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
             //nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-gradient-primary3
             a.navbar-brand(href="/") Malerie Fleischman
@@ -18,7 +21,11 @@ html
                 .navbar-nav
                     a.nav-item.nav-link(href="/timer") React Timer
                     a.nav-item.nav-link(href="/beer") Jquery Beer Calculator
-                    a.nav-item.nav-link(href="/work") Work History
         .container-fluid
             block content
         block footer_scripts
+
+    script.
+        AOS.init({
+            duration: 1200
+        });
