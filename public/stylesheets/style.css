@@ -21,6 +21,9 @@ body {
         padding-top: 50px;
         font: 16px "Lucida Grande", Helvetica, Arial, sans-serif !important;
     }
+    .me-center{
+        top: 10%;
+    }
 }
 
 .container-fluid{
@@ -116,6 +119,10 @@ a:hover{
 .res{
     margin-top: 1.5rem;
     /*border-bottom: 1px solid #e6eaee*/
+}
+
+.space{
+    border-bottom: 1px solid #e6eaee;
 }
 
 .back{
