@@ -1,131 +1,55 @@
 extends layout
 
 block content
-    .row.d-flex.justify-content-center.main-gradient
+
+
+    .row.d-flex.justify-content-center.nav-gradient
         .me
             .me-center
-                .item.res(data-aos='zoom-in')
-                        img.rounded-circle.d-flex.justify-content-center.border.border-dark(src="/images/malerie-pink.jpg" alt="Malerie")
-    .row.mt-md-3.item(data-aos='fade-up')
-        .col-sm-3.col-md-2.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
-            .my-3.py-3
-                h3.display-5 About
-        .col-sm-9.col-md-10.bg-light.text-center.part-1-grade
-            .my-3.py-3
-                p.lead Results-driven, enthusiastic young professional. Two years of demonstrated programming experience, a year of professional programming experience.
-    .row.mt-md-3(data-aos='fade-up')
-        .col-sm-3.col-md-2.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
-            .my-3.py-3
-                h3.display-5 University of Washington
-        .col-sm-9.col-md-10.bg-light.text-center.part-2-grade
-            .my-3.py-3
-                div.res
-                    h3 UAA: IT - Web Computing Specialist
-                    p February 2019 - Present
-                    p.d-none.d-sm-none.d-md-block  Full stack Web Development; maintaining and expanding upon student and faculty facing tools to facilitate hiring and tutoring.
-                    p.d-none.d-sm-none.d-md-block  Projects are built in Javascript with Node.js Express.
-    .row.mt-md-3.item(data-aos='fade-up')
-        .col-sm-3.col-md-2.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
-            .my-3.py-3
-                h2.display-5 Blueprint Technologies
-        .col-sm-9.col-md-10.bg-light.text-center.part-3-grade
-            .my-3.py-3
-                div.res
-                    h4 Web Development / Technical Support
-                    p October  2016 - September 2019
-                    p.d-none.d-sm-none.d-md-block   Full stack Web Development; creating engagement-wide, internal tools supporting training and business intelligence.
-                    p.d-none.d-sm-none.d-md-block   Creating and continually expanding upon a scalable web application built in JavaScript with Node.js Express. Establishing project timelines and deliverables; documenting progress and releases in Jira as well as developing and maintaining project documentation hosted on Confluence.
-                    p.d-none.d-sm-none.d-md-block   Tier 3 level customer care with an emphasis in technological support.
-                    p.d-none.d-sm-none.d-md-block   Specializing in hardware/network troubleshooting, trending issue documentation, and identifying areas for UX improvement for client sponsored software.
-    .row.mt-md-3.item(data-aos='fade-up')
-        .col-sm-3.col-md-2.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
-            .my-3.py-3
-                h2.display-5 The Family Pet
-        .col-sm-9.col-md-10.bg-light.text-center.part-4-grade
-            .my-3.py-3
-                div.res
-                    h3 Veterinary Assistant
-                    p December 2014 - October 2016
-                    p.d-none.d-sm-none.d-md-block   Provided consultations and resources for an average of 20 clients per day.
-                    p.d-none.d-sm-none.d-md-block   Responsible for training new hires. Performed regular checks on data retention, ensuring proper digital storage of client data for legal and business compliance.
-    .row.mt-md-3.item(data-aos='fade-up')
-        .col-sm-3.col-md-2.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
-            .my-3.py-3
-                h2.display-5 Bainbridge Island Land Trust
-        .col-sm-9.col-md-10.bg-light.text-center.part-5-grade
-            .my-3.py-3
-                div.res
-                    h3 Project Development - Intern
-                    p June  2014 - January 2015
-                    p.d-none.d-sm-none.d-md-block  Lead the research, development, and implementation of a wildlife monitoring system.
-                    p.d-none.d-sm-none.d-md-block  Performed product research and recommendations for the adoption of approximately 40 environmentally sustainable products.
-                    p.d-none.d-sm-none.d-md-block  Organized and led team outings to project sites. Created and presented the final project report to the company board directors.
+                .item.res(data-aos='zoom-in' data-aos-duration='5000')
+                        img.rounded-circle.d-flex.justify-content-center(src="/images/malerie-square.jpg" alt="Malerie")
 
-    //
-        .row.back
-            .col-2
-                .spacer.spacer-yel.rounded.bg-complementary1.border.border-complementary3
-            .col-2
-                .spacer.spacer-yel.rounded.bg-complementary2.border.border-complementary4
-            .col-4
-                img.spacer.rounded(src="/images/malerie.jpg" alt="Malerie")
-            .col-2
-                .spacer.spacer-blue.rounded.bg-primary2.border.border-primary4(id="spacer-3")
-            .col-2
-                .spacer.spacer-blue.rounded.bg-primary1.border.border-primary3(id="spacer-4")
-        .row.res
-            .col
-                .card.card-body.bg-primary1.border.border-primary3(id="about")
-                    h2.text-dark About
-                .card.card-body.border.border-primary1
-                    p Results-driven, enthusiastic young professional. Two years of demonstrated programming experience, half a year of professional programming experience. Proven and passionate in designing, creating, and delivering great products to consumers by continually aligning business priorities with customer needs.
-        .row.res
-            .col
-                .card.card-body.bg-primary1.border.border-primary3(id="experience")
-                    h2.text-dark Experience
-                .card.card-body.border.border-primary1
-                    h3 University of Washington, UAA: IT - Web Computing Specialist
-                    p February 2019 - Present
-                    p Full stack Web Development; maintaining and expanding upon student and faculty facing tools to facilitate hiring and tutoring. Projects are built in Javascript with Node.js Express.
-                .card.card-body.border.border-primary1
-                    h3 Blueprint Technologies, Bellevue WA - Web Development and Technical Support Representative
-                    p October  2016 - September 2019
+                .div.col.res
+                    h5.text-light(id="about") Results-driven, enthusiastic young professional.
+                    h5.text-light Programming professionally since August 2018
+    .row.d-flex.justify-content-center
+        .col
+            .row.item.border.border-light(data-aos='fade-up')
+                .col-sm-5.col-md-4.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
+                    .my-3.py-3
+                        h2.display-5 University of Washington
+                        h4 UAA: IT - Web Computing Specialist
+                        p February 2019 - Present
+                .col-sm-7.col-md-8.bg-light.text-center.uw.work.text-white
+                    .my-3.py-3
+                        div.res
+            .row.item.border.border-light(data-aos='fade-up')
+                .col-sm-5.col-md-4.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
+                    .my-3.py-3
+                        h2.display-5 Blueprint Technologies
+                        h4 Web Development / Technical Support
+                        p October  2016 - September 2019
+                .col-sm-7.col-md-8.bg-light.text-center.bp.work.text-white
+                    .my-3.py-3
+                        div.res
+            .row.item.border.border-light(data-aos='fade-up')
+                .col-sm-5.col-md-4.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
+                    .my-3.py-3
+                        h2.display-5 The Family Pet
+                        h4 Veterinary Assistant
+                        p December 2014 - October 2016
+                .col-sm-7.col-md-8.bg-light.text-center.text-white.fp.work
+                    .my-3.py-3
+                        div.res
 
-                    h4 Web Development
-                    p Full stack Web Development; creating engagement-wide, internal tools supporting training and business intelligence. Creating and continually expanding upon a scalable web application built in JavaScript with Node.js Express. Establishing project timelines and deliverables; documenting progress and releases in Jira as well as developing and maintaining project documentation hosted on Confluence.
+            .row.item.border.border-light(data-aos='fade-up')
+                .col-sm-5.col-md-4.bg-dark.text-center.text-white.item(data-aos='fade-right' data-aos-duration='1500')
+                    .my-3.py-3
+                        h2.display-5 Bainbridge Island Land Trust
+                        h4 Project Development - Intern
+                        p June  2014 - January 2015
+                .col-sm-7.col-md-8.bg-light.text-center.text-white.lt.work
+                    .my-3.py-3
+                        div.res.btm
 
-                    h4 Technical Support
-                    p Tier 3 level customer care with an emphasis in technological support. Specializing in hardware/network troubleshooting, trending issue documentation, and identifying areas for UX improvement for client sponsored software. Participant in a L&D pilot project testing structure, efficacy, and application processes.
-
-                .card.card-body.border.border-primary1
-                    h3 The Family Pet, Seattle WA — Veterinary Assistant
-                    p December 2014 - October 2016
-                    p Project Manager and Event Coordinator / Leadership. Provided consultations and resources for an average of 20 clients per day. Responsible for training new hires. Performed regular checks on data retention, ensuring proper digital storage of client data for legal and business compliance.
-
-                .card.card-body.border.border-primary1
-                    h3 Bainbridge Island Land Trust, Bainbridge WA — Intern
-                    p June  2014 - January 2015
-                    p Lead the research, development, and implementation of a wildlife monitoring system. Performed product research and recommendations for the adoption of approximately 40 environmentally sustainable products. Organized and led team outings to project sites. Created and presented the final project report to the company board directors.
-        .row.res
-            .col
-                .card.card-body.bg-complementary1.border.border-complementary3(id="skills")
-                    h2.text-dark Skills
-                .card.card-body.border.border-primary1
-                    p MySQL/MSSQL. HTTP, TLS. HTML / CSS, JavaScript, jQuery, Node.js, Express, React, Bootstrap, PUG, C++. GitHub, Jira. Microsoft Sql Server Management Studio. Deployment in Azure WebApps, Active Directory Authentication. Command Line / PowerShell / Windows. Linux / Ubuntu / Mac / Terminal.
-            .col
-                .card.card-body.bg-primary1.border.border-primary3(id="projects")
-                    h2.text-dark Projects
-                .card.card-body.border.border-primary1
-                    p
-                        a(href="https://github.com/maleriefleischman") GitHub
-                    p
-                        a(href="https://codepen.io/maleriefleischman") CodePen
-            .col
-                .card.card-body.bg-complementary1.border.border-complementary3(id="education")
-                    h2.text-dark Education
-                .card.card-body.border.border-primary1
-                    h3 University of Washington, Seattle WA
-                    p 2010 - 2014
-                    p BA Environmental Studies
-
-
+        div.footer.back-gradient
