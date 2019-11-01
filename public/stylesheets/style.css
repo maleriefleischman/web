@@ -26,6 +26,32 @@ body {
     }
 }
 
+.work{
+    min-height: 250px;
+}
+
+.uw {
+    background: url("https://ischool.uw.edu/sites/default/files/2017-08/suzz_front-1.jpg") no-repeat;
+    background-size: cover;
+}
+
+.bp{
+    background: url("https://bpcs.com/asset/5d2e3b909da1c") no-repeat;
+    background-size: cover;
+}
+
+.lt{
+    background: url("https://www.bi-landtrust.org/wp-content/uploads/2018/09/Cougar-Creek_tree-trunk-1.jpg") no-repeat;
+    background-size: cover;
+
+}
+
+.fp{
+    background: url("https://cdcssl.ibsrv.net/ibimg/smb/1067x1067_80/webmgr/0o/j/x/5c4205caaabfd_vet1.jpg") no-repeat;
+    background-size: cover;
+}
+
+
 .container-fluid{
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -39,7 +65,6 @@ body {
     text-align: center;
     right: 0;
     left: 0;
-    overflow: hidden;
 }
 
 .me-center{
@@ -48,81 +73,47 @@ body {
     top: 20%;
 }
 
-#wrapper{
-    width:100%;
-    height:auto;
-    position:relative;
-}
-
-.wrap {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    max-height: 100vh;
-}
-
 .rounded-circle {
     height: 250px;
     width: 250px;
     display: block;
     margin-right: auto;
     margin-left: auto;
+    border: 2px solid #f8f9fa !important;
+}
+
+.footer{
+    min-height: 250px;
+    width: 100%;
 }
 
 .main-gradient{
-    background-image: linear-gradient(to right top, #845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871);
+    background-image: linear-gradient(to right, #845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871);
 }
 
-.part-1-grade{
-    background-image: linear-gradient(to right top, #845EC2, #D65DB1);
-}
-
-.part-2-grade{
-    background-image: linear-gradient(to right top, #D65DB1, #FF6F91);
-}
-
-.part-3-grade{
-    background-image: linear-gradient(to right top, #FF6F91, #FF9671);
-}
-
-.part-4-grade{
-    background-image: linear-gradient(to right top, #FF9671, #FFC75F);
-}
-
-.part-5-grade{
-    background-image: linear-gradient(to right top, #FFC75F, #F9F871);
+.back-gradient{
+    background-image: linear-gradient(to right bottom, #845EC2, #2C73D2, #0081CF, #0089BA, #008E9B, #008F7A);
 }
 
 .nav-gradient{
     background-image: linear-gradient(to right top, #845EC2, #2C73D2, #0081CF, #0089BA, #008E9B, #008F7A);
 }
 
-.purple{
-    background-image: linear-gradient(to right top, #845EC2, #D65DB1);
-}
 
 .card a {
   color: #00488D;
 }
 
 a:hover{
-    color: #FF6F91 !important;
-}
-
-
-.spacer{
-    display: block;
-    height: 100%;
-    width: 100%;
+    text-decoration: underline #00C9A7 !important;
 }
 
 .res{
     margin-top: 1.5rem;
-    /*border-bottom: 1px solid #e6eaee*/
 }
 
-.space{
-    border-bottom: 1px solid #e6eaee;
+.btm{
+    margin-bottom: 1.5rem;
 }
 
 .back{
@@ -133,27 +124,9 @@ a:hover{
     height: 100%;
 }
 
-.spacer-yel:hover{
-    background-image: linear-gradient(to right top, #000000, #26141c, #441f37, #5f2d59, #753f82, #6a519f, #5265ba, #0078d1, #0084c8, #008bb2, #008e96, #008f7a);
-}
-
-.spacer-blue:hover{
-    background-image: linear-gradient(#AAD5FF, #7BBEFF, #138BFF);
-}
 
 #root{
     margin: 2rem;
-}
-
-.opaque{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-repeat:-x;
-    opacity: .125;
-    z-index:-1;
 }
 
 legend {
