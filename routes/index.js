@@ -10,6 +10,10 @@ router.get('/timer', function(req, res, next){
   res.render('timer', { title: 'React Timer'});
 });
 
+router.get('/timer-tutorial', function(req, res, next){
+    res.render('timer_tutorial', { title: 'React Timer Tutorial'});
+});
+
 router.get('/beer', function(req, res, next){
     res.render('beer', { title: 'Jquery Beer Calculator'});
 });
