@@ -2,4 +2,45 @@ extends layout
 
 block content
 
-    .h3 Creating a Timer in React
+    .container
+
+            .row
+                .col.text-center.text-white.mt-3
+                    .my-3.py-3
+                        div.res.clock
+            .row
+                .col
+                    h1.display-4.font-italic Coding in React
+                    p.lead.my-3 React is exploding in todays market. If you want to write fast, flexible, and open source front end code then you want to be using React.
+
+            .row
+                .col
+
+                    div.border
+
+                    div.mt-3.mb-3
+
+                        p In order to keep things simple, this tutorial will be part of a 2 part series that goes over how to build a timer in React.
+                        p To see the finished product, check out the following page!
+                            a(href="https://maleriefleischman.com/timer")  React Timer
+
+                        h3 Why React?
+
+                        h3 Getting Started
+
+                        h3 Code Example
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    |class Clock extends React.Component {
+                                    |   constructor(props) {
+                                    |       super(props);
+                                    |       this.state = {
+                                    |           wage:0,
+                                    |           calcWage:0,
+                                    |           start:new Date(),
+                                    |           date: new Date()
+                                    |   };
+                                    |}
+
