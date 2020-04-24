@@ -164,3 +164,8 @@ legend {
     padding: 15px;
 }
 
+.highlight{
+    background-color: rgb(66, 71, 79);
+    display: block;
+}
+
