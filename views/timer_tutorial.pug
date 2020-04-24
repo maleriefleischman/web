@@ -18,29 +18,84 @@ block content
 
                     div.border
 
-                    div.mt-3.mb-3
+                    div.my-3
 
                         p In order to keep things simple, this tutorial will be part of a 2 part series that goes over how to build a timer in React.
                         p To see the finished product, check out the following page!
-                            a(href="https://maleriefleischman.com/timer")  React Timer
+                        a https://maleriefleischman.com/timer
 
-                        h3 Why React?
+                        h3.my-3 Why React?
+                        p React is a fast, open source, javaScript framework.
+                        p It allows for real time rendering without requiring page refreshes or constant communication with the server/database.
 
-                        h3 Getting Started
+                        p In this tutorial, we will be going over how to create a digital pay timer to help users measure the time they have spent working, as well as calculate their earnings.
+                        p You can follow along with me on the tutorial code pen
+                        a https://codepen.io/maleriefleischman/pen/NWGpqNd
 
-                        h3 Code Example
+
+                        h2.my-3 Building our Template
+
+
+
+
+                        p First, let's figure out how we want our timer to look.
+
+                        p We'll need an input section for our users to provide their wage, and we'll need a start and stop button.
+                        p Next, we'll need a section to see the time elapsed, as well as the final wages earned at the end.
+
+
+                        .row
+                            .col
+                                .code.rounded
+                                    div.m-2
+                                        code
+                                            <span>&lt;div&gt;</span>
+                                            <span>   &lt;input type="number" id="wage" placeholder="Hourly Wage" required /&gt </span>
+                                            <span>   &lt;div&gt </span>
+                                            <span>        &lt;button>Start!&lt;/button&gt</span>
+                                            <span>        &lt;button>Stop!&lt;/button&gt</span>
+                                            <span>   &lt;/div&gt</span>
+                                            <span>   &lt;div&gt;{/* TIME */}&lt;/div&gt;  </span>
+                                            <span>   &lt;div&gt;{/* WAGE */}&lt;/div&gt; </span>
+                                            <span> &lt;/div&gt </span>
+
+                        p As you can see, the template is pretty boring, it doesn't have any values, it isn't taking user input, and it never changes
+                        p We can solve all 3 of these problems by adding something called 'State'
+
+
+                        .row
+                            .col
+                                h2 Determining and Changing State
+                                p React uses JSX to render small, cheap, reusable elements.
+                                p These elements are immutable. In other words, they do not change.
+                                p The UI can only be updated by creating a new element.
+                                p One of the ways to trigger the creation of a new element is by changing it's state
+                                p Let's start by adding a state for the users Wage
 
                         .code.rounded
                             div.m-2
                                 code
-                                    |class Clock extends React.Component {
-                                    |   constructor(props) {
-                                    |       super(props);
-                                    |       this.state = {
-                                    |           wage:0,
-                                    |           calcWage:0,
-                                    |           start:new Date(),
-                                    |           date: new Date()
-                                    |   };
-                                    |}
+                                    <span> class Clock extends React.Component { </span>
+                                    <span>   constructor(props) { </span>
+                                    <span>       super(props); </span>
+                                    <span>       this.state = { </span>
+                                    <span class="highlight">            wage:0 </span>
+                                    <span>    }; </span>
+                                    <span>}</span>
 
+                        .row
+                            .col
+                                p Now that we have a 'wage' state, we can display it in the render() function
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>&lt;div&gt;</span>
+                                    <span>   &lt;input type="number" id="wage" placeholder="Hourly Wage" required /&gt </span>
+                                    <span>   &lt;div&gt </span>
+                                    <span>        &lt;button>Start!&lt;/button&gt</span>
+                                    <span>        &lt;button>Stop!&lt;/button&gt</span>
+                                    <span>   &lt;/div&gt</span>
+                                    <span>   &lt;div&gt;{/* TIME */}&lt;/div&gt;  </span>
+                                    <span class="highlight m-0">   &lt;div&gt;{this.state.wage}&lt;/div&gt; </span>
+                                    <span> &lt;/div&gt </span>
