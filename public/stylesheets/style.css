@@ -105,7 +105,10 @@ body {
 }
 
 a:hover{
-    text-decoration: underline #00C9A7 !important;
+    text-decoration: underline #D65DB1 !important;
+    background: -webkit-linear-gradient(#845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .res{
