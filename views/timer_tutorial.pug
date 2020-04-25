@@ -11,27 +11,92 @@ block content
             .row
                 .col
                     h1.display-4.font-italic Coding in React
-                    p.lead.my-3 React is exploding in todays market. If you want to write fast, flexible, and open source front end code then you want to be using React.
+                    p.lead.my-3
 
             .row
                 .col
 
-                    div.border
+                    .border.my-2
 
-                    div.my-3
+                    div.my-3.article
 
-                        p In order to keep things simple, this tutorial will be part of a 2 part series that goes over how to build a timer in React.
+                        p In this tutorial, we will be going over how to create a digital pay timer.
                         p To see the finished product, check out the following page!
-                        a https://maleriefleischman.com/timer
+                        a.font-weight-bold(href = "https://maleriefleischman.com/timer" target="_blank")  https://maleriefleischman.com/timer
 
-                        h3.my-3 Why React?
-                        p React is a fast, open source, javaScript framework.
-                        p It allows for real time rendering without requiring page refreshes or constant communication with the server/database.
+                        .border.my-2
 
-                        p In this tutorial, we will be going over how to create a digital pay timer to help users measure the time they have spent working, as well as calculate their earnings.
-                        p You can follow along with me on the tutorial code pen
-                        a https://codepen.io/maleriefleischman/pen/NWGpqNd
+                        h2 The Basics
 
+                        p React is: A JavaScript Library
+                        p React is: Open Source
+                        p React is: A Way to Build Responsive UI on Static Pages
+
+                        .border
+
+                        h3.my-3 JSX & React Elements
+
+                        p React is made up of building blocks called elements
+                        p React elements are created by using JSX, an HTML-like syntax that allows you to put HTML in JavaScript
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span> element = &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+
+                        .border.my-2
+
+                        h3.my-3 Rendering a React Element
+
+                        p An empty div with a specified id "root" acts as the connection point between your static HTML page and your React code.
+                        p This div is known as a "root" DOM node. Everything within this node will be managed by React DOM
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>&lt;html&gt;</span>
+                                    <span>  &lt;head&gt;&lt;/head&gt;</span>
+                                    <span>  &lt;body&gt;</span>
+                                    <span class="highlight">      &lt;div id="root"&gt;&lt;/div&gt;</span><span>  &lt;/body&gt;</span>
+                                    <span>&lt;/html&gt;</span>
+
+                        p To render the React element, pass the element and root DOM node to ReactDOM.render()
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>ReactDOM.render( <span>
+                                    <span>      element, </span>
+                                    <span>      document.getElementById('root')</span>
+                                    <span>);</span>
+
+
+                        .border.my-2
+
+                        h2.my-3 React Components
+
+                        p React components are made up of elements. They operate like functions and can be defined using JavaScript functions or ES6 Classes
+                        p The following components are defined differently but function the same way
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>function App() { </span>
+                                    <span>      return &lt;h1&gt;Hello, world!&lt;/h1&gt;
+                                    <span>);</span>
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>class App() extend React.Component { </span>
+                                    <span>  render() { </span>
+                                    <span>      return &lt;h1&gt;Hello, world!&lt;/h1&gt;
+                                    <span>);</span>
+
+                        p Components help to keep elements separate and reusable.
+
+                        .border.my-2
 
                         h2.my-3 Building our Template
 
@@ -62,15 +127,14 @@ block content
                         p As you can see, the template is pretty boring, it doesn't have any values, it isn't taking user input, and it never changes
                         p We can solve all 3 of these problems by adding something called 'State'
 
+                        .border.my-2
 
-                        .row
-                            .col
-                                h2 Determining and Changing State
-                                p React uses JSX to render small, cheap, reusable elements.
-                                p These elements are immutable. In other words, they do not change.
-                                p The UI can only be updated by creating a new element.
-                                p One of the ways to trigger the creation of a new element is by changing it's state
-                                p Let's start by adding a state for the users Wage
+
+                        h2 Determining and Changing State
+                        p React uses JSX to render small, cheap, reusable elements.
+                        p These elements are immutable. In other words, they do not change. Instead, the UI is updated by creating a new element.
+                        p One of the ways to trigger the creation of a new element is by changing it's state
+                        p Let's start by adding a state for the users Wage
 
                         .code.rounded
                             div.m-2
@@ -79,13 +143,10 @@ block content
                                     <span>   constructor(props) { </span>
                                     <span>       super(props); </span>
                                     <span>       this.state = { </span>
-                                    <span class="highlight">            wage:0 </span>
-                                    <span>    }; </span>
+                                    <span class="highlight">            wage:0 </span><span>    }; </span>
                                     <span>}</span>
 
-                        .row
-                            .col
-                                p Now that we have a 'wage' state, we can display it in the render() function
+                        p Now that we have a 'wage' state, we can display it in the render() function
 
                         .code.rounded
                             div.m-2
@@ -97,5 +158,48 @@ block content
                                     <span>        &lt;button>Stop!&lt;/button&gt</span>
                                     <span>   &lt;/div&gt</span>
                                     <span>   &lt;div&gt;{/* TIME */}&lt;/div&gt;  </span>
-                                    <span class="highlight m-0">   &lt;div&gt;{this.state.wage}&lt;/div&gt; </span>
+                                    <span class="highlight m-0">   &lt;div&gt;${this.state.wage}&lt;/div&gt; </span><span> &lt;/div&gt </span>
+
+                        p Now we have rendered value that is determined by the Clock classes state
+                        p Check out the update here:
+                        a.font-weight-bold(href = "https://codepen.io/maleriefleischman/pen/oNjZybm" target="_blank")  https://codepen.io/maleriefleischman/pen/oNjZybm
+
+                        .border.my-2
+
+                        p This timer won't be very good if it can't show time!
+
+                        p 1 create a new state called 'date'
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span> class Clock extends React.Component { </span>
+                                    <span>   constructor(props) { </span>
+                                    <span>       super(props); </span>
+                                    <span>       this.state = { </span>
+                                    <span>            wage:0, </span>
+                                    <span class="highlight">            Date: new Date() </span> <span>    }; </span>
+                                    <span>}</span>
+
+
+                        p 2 Call the date state in the render function
+
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>&lt;div&gt;</span>
+                                    <span>   &lt;input type="number" id="wage" placeholder="Hourly Wage" required /&gt </span>
+                                    <span>   &lt;div&gt </span>
+                                    <span>        &lt;button>Start!&lt;/button&gt</span>
+                                    <span>        &lt;button>Stop!&lt;/button&gt</span>
+                                    <span>   &lt;/div&gt</span>
+                                    <span class="highlight m-0">   &lt;div&gt;{this.state.date.toLocaleTimeString()}&lt;/div&gt;  </span> <span>  &lt;div&gt;${this.state.wage}&lt;/div&gt; </span>
                                     <span> &lt;/div&gt </span>
+
+                        p Now we can see a timestamp for when the page was initially rendered.
+                        p Next, we'll run a function that will update the date state every second
+
+                        .border.my-2
+
+                        p
