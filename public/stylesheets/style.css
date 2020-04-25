@@ -111,6 +111,16 @@ a:hover{
     -webkit-text-fill-color: transparent;
 }
 
+.article a{
+    background: -webkit-linear-gradient(#845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.article a:hover{
+    text-decoration: underline #D65DB1 !important;
+}
+
 .res{
     margin-top: 1.5rem;
 }
@@ -154,10 +164,10 @@ legend {
     white-space: pre-wrap;
     word-break: break-word;
     height: auto !important;
-    margin: 1rem;
+    margin: 2rem;
 }
 
-.code pre code{
+.code code {
 
     font-size: 87.5%;
     color: #e83e8c !important;
@@ -169,3 +179,6 @@ legend {
     display: block;
 }
 
+.article p{
+    margin-top: 25px;
+}
