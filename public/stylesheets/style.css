@@ -24,6 +24,23 @@ body {
     .me-center{
         top: 10%;
     }
+
+    .code{
+        background-color: #212529;
+        line-height: 20px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        height: auto !important;
+        margin: 2rem;
+        font-size: 1rem;
+    }
+
+    .code code {
+
+        font-size: 1rem;
+        color: #e83e8c !important;
+        padding: 15px;
+    }
 }
 
 .work{
@@ -158,20 +175,23 @@ legend {
     padding: 25%;
 }
 
+
 .code{
     background-color: #212529;
     line-height: 20px;
     white-space: pre-wrap;
     word-break: break-word;
     height: auto !important;
-    margin: 2rem;
+    min-width: 100%;
 }
 
 .code code {
 
-    font-size: 87.5%;
+    font-size: 1rem;
     color: #e83e8c !important;
     padding: 15px;
+    min-width: 100%;
+
 }
 
 .highlight{
