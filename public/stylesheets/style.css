@@ -128,6 +128,13 @@ a:hover{
     -webkit-text-fill-color: transparent;
 }
 
+.dropdown-menu a:hover{
+    text-decoration: underline #D65DB1 !important;
+    background: -webkit-linear-gradient(#845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .article a{
     background: -webkit-linear-gradient(#845EC2, #2C73D2, #0081CF, #0089BA, #008E9B);
     -webkit-background-clip: text;
