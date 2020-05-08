@@ -20,40 +20,34 @@ block content
 
                     div.my-3.article
 
-                        p In this tutorial, we will be going over how to create a digital pay timer.
-                        p To see the finished product, check out the following page!
-                        a.font-weight-bold(href = "https://maleriefleischman.com/timer" target="_blank")  https://maleriefleischman.com/timer
+                        p In this tutorial, we will be going over how to create a digital timer in React.
+                        p
+                        i Why a digital timer,
+                        |  you may ask? Because a digital timer demonstrates the most important strength of React. Updating UI
+                        strong  quickly
+                        |  and
+                        strong  efficiently.
+                        p
+                        |React renders in a virtual DOM, called the
+                        strong  React DOM.
+                        |  The React DOM compares changes in an element and its children to the previous version, allowing it to only change the DOM where it is necessary.  This results in a faster, and more lightweight strategy for real time updates.
+                        p
+                        | So, how do we get React to render?
+                        p
+                        | First, we'll need a
+                        i  .html
+                        |  file, and a
+                        i  .js
+                        |  file.
+                        p
+                        | Now, create an empty div in the body of our
+                        i   .html
+                        |   file with an
+                        i   id="root".
 
-                        .border.my-2
-
-                        h2 The Basics
-
-                        p React is: A JavaScript Library
-                        p React is: Open Source
-                        p React is: A Way to Build Responsive UI on Static Pages
-
-                        .border
-
-                        h3.my-3 JSX & React Elements
-
-                        p React is made up of building blocks called elements
-                        p React elements are created by using JSX, an HTML-like syntax that allows you to put HTML in JavaScript
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span> element = &lt;h1&gt;Hello, world!&lt;/h1&gt;
-
-
-                        .border.my-2
-
-                        h3.my-3 Rendering a React Element
-
-                        p An empty div with a specified id "root" acts as the connection point between your static HTML page and your React code.
-                        p This div is known as a "root" DOM node. Everything within this node will be managed by React DOM
-
-                        .code.rounded
-                            div.m-2
                                 code
                                     <span>&lt;html&gt;</span>
                                     <span>  &lt;head&gt;&lt;/head&gt;</span>
@@ -61,145 +55,549 @@ block content
                                     <span class="highlight">      &lt;div id="root"&gt;&lt;/div&gt;</span><span>  &lt;/body&gt;</span>
                                     <span>&lt;/html&gt;</span>
 
-                        p To render the React element, pass the element and root DOM node to ReactDOM.render()
-
-                        .code.rounded
-                            div.m-2
-                                code
-                                    <span>ReactDOM.render( <span>
-                                    <span>      element, </span>
-                                    <span>      document.getElementById('root')</span>
-                                    <span>);</span>
 
 
-                        .border.my-2
-
-                        h2.my-3 React Components
-
-                        p React components are made up of elements. They operate like functions and can be defined using JavaScript functions or ES6 Classes
-                        p The following components are defined differently but function the same way
-
-                        .code.rounded
-                            div.m-2
-                                code
-                                    <span>function App() { </span>
-                                    <span>      return &lt;h1&gt;Hello, world!&lt;/h1&gt;
-                                    <span>);</span>
-
-                        .code.rounded
-                            div.m-2
-                                code
-                                    <span>class App() extend React.Component { </span>
-                                    <span>  render() { </span>
-                                    <span>      return &lt;h1&gt;Hello, world!&lt;/h1&gt;
-                                    <span>);</span>
-
-                        p Components help to keep elements separate and reusable.
-
-                        .border.my-2
-
-                        h2.my-3 Building our Template
+                        p
+                        | All of our React code will render within this div.
 
 
-
-
-                        p First, let's figure out how we want our timer to look.
-
-                        p We'll need an input section for our users to provide their wage, and we'll need a start and stop button.
-                        p Next, we'll need a section to see the time elapsed, as well as the final wages earned at the end.
-
-
-                        .row
-                            .col
-                                .code.rounded
-                                    div.m-2
-                                        code
-                                            <span>&lt;div&gt;</span>
-                                            <span>   &lt;input type="number" id="wage" placeholder="Hourly Wage" required /&gt </span>
-                                            <span>   &lt;div&gt </span>
-                                            <span>        &lt;button>Start!&lt;/button&gt</span>
-                                            <span>        &lt;button>Stop!&lt;/button&gt</span>
-                                            <span>   &lt;/div&gt</span>
-                                            <span>   &lt;div&gt;{/* TIME */}&lt;/div&gt;  </span>
-                                            <span>   &lt;div&gt;{/* WAGE */}&lt;/div&gt; </span>
-                                            <span> &lt;/div&gt </span>
-
-                        p As you can see, the template is pretty boring, it doesn't have any values, it isn't taking user input, and it never changes
-                        p We can solve all 3 of these problems by adding something called 'State'
-
-                        .border.my-2
-
-
-                        h2 Determining and Changing State
-                        p React uses JSX to render small, cheap, reusable elements.
-                        p These elements are immutable. In other words, they do not change. Instead, the UI is updated by creating a new element.
-                        p One of the ways to trigger the creation of a new element is by changing it's state
-                        p Let's start by adding a state for the users Wage
-
-                        .code.rounded
-                            div.m-2
-                                code
-                                    <span> class Clock extends React.Component { </span>
-                                    <span>   constructor(props) { </span>
-                                    <span>       super(props); </span>
-                                    <span>       this.state = { </span>
-                                    <span class="highlight">            wage:0 </span><span>    }; </span>
-                                    <span>}</span>
-
-                        p Now that we have a 'wage' state, we can display it in the render() function
-
-                        .code.rounded
-                            div.m-2
-                                code
-                                    <span>&lt;div&gt;</span>
-                                    <span>   &lt;input type="number" id="wage" placeholder="Hourly Wage" required /&gt </span>
-                                    <span>   &lt;div&gt </span>
-                                    <span>        &lt;button>Start!&lt;/button&gt</span>
-                                    <span>        &lt;button>Stop!&lt;/button&gt</span>
-                                    <span>   &lt;/div&gt</span>
-                                    <span>   &lt;div&gt;{/* TIME */}&lt;/div&gt;  </span>
-                                    <span class="highlight m-0">   &lt;div&gt;${this.state.wage}&lt;/div&gt; </span><span> &lt;/div&gt </span>
-
-                        p Now we have rendered value that is determined by the Clock classes state
-                        p Check out the update here:
-                        a.font-weight-bold(href = "https://codepen.io/maleriefleischman/pen/oNjZybm" target="_blank")  https://codepen.io/maleriefleischman/pen/oNjZybm
-
-                        .border.my-2
-
-                        p This timer won't be very good if it can't show time!
-
-                        p 1 create a new state called 'date'
-
-                        .code.rounded
-                            div.m-2
-                                code
-                                    <span> class Clock extends React.Component { </span>
-                                    <span>   constructor(props) { </span>
-                                    <span>       super(props); </span>
-                                    <span>       this.state = { </span>
-                                    <span>            wage:0, </span>
-                                    <span class="highlight">            Date: new Date() </span> <span>    }; </span>
-                                    <span>}</span>
-
-
-                        p 2 Call the date state in the render function
+                        p
+                        | Next, we run ReactDOM.render() in our javascript file. ReactDOM.render() requires two parameters:
+                        p
+                            ol
+                                li The  React content we want to render
+                                li The HTML element the React content will render within
 
 
                         .code.rounded
-                            div.m-2
+                            .m-2
                                 code
-                                    <span>&lt;div&gt;</span>
-                                    <span>   &lt;input type="number" id="wage" placeholder="Hourly Wage" required /&gt </span>
-                                    <span>   &lt;div&gt </span>
-                                    <span>        &lt;button>Start!&lt;/button&gt</span>
-                                    <span>        &lt;button>Stop!&lt;/button&gt</span>
-                                    <span>   &lt;/div&gt</span>
-                                    <span class="highlight m-0">   &lt;div&gt;{this.state.date.toLocaleTimeString()}&lt;/div&gt;  </span> <span>  &lt;div&gt;${this.state.wage}&lt;/div&gt; </span>
-                                    <span> &lt;/div&gt </span>
+                                    <span class="highlight">ReactDOM.render( </span><span>      &lt;p&gt;Hello&lt;/p&gt;, </span>
+                                    <span>      document.getElementById('root') </span>
+                                    <span> ); </span>
 
-                        p Now we can see a timestamp for when the page was initially rendered.
-                        p Next, we'll run a function that will update the date state every second
+
 
                         .border.my-2
 
                         p
+                        |React is made up of plain objects called
+                        strong  elements
+                        |   which are created using
+                        strong   JSX.
+                        p
+                        |
+                        strong JSX
+                        |  is an HTML-like syntax extension of Javascript that looks and functions similar to HTML, but has the added benefit of harnessing Javascript variables and functions.
+                        p
+                        | Everything inside of our return function of the following code is an
+                        strong   element
+                        |   which has been written in
+                        strong  JSX.
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>class Clock extends React.Component{</span>
+                                    <span>  render(){</span>
+                                    <span>      return(</span>
+                                    <span class="highlight">          &lt;div&gt;&lt;</span><span class="highlight"></span><span class="highlight">              &lt;button&gt; Start! &lt;/button&gt; </span><span class="highlight">              &lt;button&gt; Stop! &lt;/button&gt; </span><span class="highlight">          &lt;/div&gt;&lt;</span>
+                                    <span>      );</span>
+                                    <span>  }</span>
+                                    <span>}</span>
+
+
+                        .border.m-2
+
+                        p
+                        |Elements can be returned inside of React
+                        strong  components.
+                        p
+                        strong Components
+                        |  help to keep elements
+                        i  small, separate,
+                        |  and
+                        i  reusable.
+                        p
+                        |Components can be declared as a
+                        strong  function
+                        |  or an
+                        strong  ES6 class.
+                        |  Declaring a component as a class, allows for some additional features such as utilizing
+                        strong  state.
+
+                        p
+                        |Elements can be generalized or updated by being passed
+                        strong  “props”
+                        |  (short for properties), which act like parameters for components.
+                        |Or by referencing their parent components
+                        strong  state,
+                        |  which functions similarly to props but is private and fully controlled by its parent component.
+
+                        p
+                        | In this case, we return these elements in a
+                        strong  Class Component
+                        |  called Clock:
+
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span class="highlight">class Clock extends React.Component{</span><span>  render(){</span>
+                                    <span>      return(</span>
+                                    <span >          &lt;div&gt;&lt;</span>
+                                    <span>              &lt;button&gt; Start! &lt;/button&gt; </span>
+                                    <span>              &lt;button&gt; Stop! &lt;/button&gt; </span>
+                                    <span>          &lt;/div&gt;&lt;</span>
+                                    <span>      );</span>
+                                    <span>  }</span>
+                                    <span>}</span>
+
+
+
+                        .border.m-2
+
+                        p
+                        | Declaring
+                        strong   state
+                        |  requires three steps:
+
+                        ol
+
+                            li
+                                p
+                                | First, we add a
+                                strong  class constructor
+                                |  to initiate
+                                strong  "this.state".
+
+                            li
+                                p
+                                | Next, we pass
+                                strong  props
+                                |  to the base constructor by calling
+                                strong  super(props).
+
+                            li
+                                p
+                                | Finally, we define our state within
+                                strong  this.state{}.
+
+
+                        p
+                        |Here we have an example of initiating
+                        strong  state:
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span>class Clock extends React.Component{</span>
+                                    <span> // step 1 </span>
+                                    <span class="highlight">  constructor(props){ </span><span>          // step 2 </span>
+                                    <span class="highlight">          super(props) </span><span>          // step 3 </span>
+                                    <span class="highlight">          this.state = {date: new Date()}; </span><span>      } </span>
+                                    <span> ... </span>
+
+
+
+                        .border.m-2
+
+                        p
+                        | Now that we have an initiated
+                        strong  state,
+                        |  let’s try referencing it in an element inside the Clock class.
+
+                        p
+                            strong Curly braces
+                            |  in JSX indicate that a JavaScript feature is about to be used, such as
+                            i  referencing a variable, props
+                            |  or
+                            i  state, running conditionals,
+                            |  or
+                            i  calling functions.
+                            p
+                            | In this case, we'll use the curly braces to reference the state
+                            strong  date.
+
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>...</span>
+                                    <span>      render(){</span>
+                                    <span>          return(</span>
+                                    <span>              &lt;div&gt;&lt;</span>
+                                    <span>                  &lt;button&gt; Start! &lt;/button&gt; </span>
+                                    <span>                  &lt;button&gt; Stop! &lt;/button&gt; </span>
+                                    <span class="highlight">                  &lt;p&gt; ${this.state.date.toLocaleTimeString()} &lt;/p&gt; </span><span>             &lt;/div&gt;</span>
+                                    <span>          );</span>
+                                    <span>      }</span>
+
+
+
+
+                        .border.m-2
+
+
+                        p
+                        |
+                        strong States
+                        |  can be updated through functions declared inside the
+                        strong   Class Component
+
+                        p
+                        |  We’ll write a function called
+                        strong  tick()
+                        |  that will update our
+                        strong  date
+                        |  state:
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span>tick() {</span>
+                                    <span>    this.setState({ </span>
+                                    <span>    date: new Date() </span>
+                                    <span>      });</span>
+                                    <span>}</span>
+
+
+
+                        .alert.alert-warning
+                            strong Note:
+                            strong  this.setState
+                            |  is used when updating a state whereas
+                            strong  this.state
+                            |  is used when
+                            strong  initiating
+                            |  a state.
+                            | Be sure not to get them confused!
+
+                        p
+                        | Now, every time
+                        strong  tick()
+                        |  is called, React updates the
+                        strong  date
+                        |  state, and the UI is re-rendered with the new state.
+
+                        p
+                        | Let's call
+                        strong  tick(),
+                        |  when the
+                        strong  "Start!"
+                        |  button is clicked.
+
+
+
+                        .code.rounded
+                            .m-2
+                                code
+
+                                    <span> &lt;div&gt; </span>
+                                    <span class="highlight">      &lt;button onClick = {() => {this.tick()}}&gt; Start! &lt;/button&gt; </span><span>      &lt;button&gt; Stop! &lt;/button&gt; </span>
+                                    <span> &lt;/div&gt;</span>
+
+
+
+                        .border.m-2
+
+                        p
+                        i  But wait,
+                        |  you may be wondering,
+                        i  this is a timer, shouldn't it be updating every second until we tell it to stop?
+                        p  Well, you’re absolutely right. Let’s fix that now.
+
+
+                        p
+                        |We already have a state to store the current time, let’s create one more called
+                        strong  isRunning.
+
+
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span> class Clock extends React.Component{ </span>
+                                    <span>      constructor(props){ </span>
+                                    <span>          super(props); </span>
+                                    <span>          This.state = { </span>
+                                    <span>              date: new Date(), </span>
+                                    <span class="highlight">              isRunning: false </span><span>        };</span>
+                                    <span>      }
+                                    <span>  render(){ </span>
+                                    <span>      ...</span>
+
+
+                        p
+                        |Now we can create a function called
+                        strong  start()
+                        |  that can call the
+                        strong  tick()
+                        |  function every 1000 milliseconds (or 1 second) using
+                        strong  setInterval
+
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span>start() {</span>
+                                    <span>   this.setState({ </span>
+                                    <span>        isRunning: true </span>
+                                    <span>    }) </span>
+                                    <span>    this.timerID = setInterval( </span>
+                                    <span>        () => this.tick(), </span>
+                                    <span>        1000 </span>
+                                    <span>        ); </span>
+                                    <span>    } </span>
+
+
+                        p
+                        |Let's go ahead and call
+                        strong  this.start()
+                        |  instead of
+                        strong  this.tick()
+                        |  in our element:
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span> &lt;button onClick={()=>{this.start()}}&gt Start! &lt;/button&gt; </span>
+
+
+                        .border.m-2
+
+
+                        p
+                        | A timer isn’t very useful if you can't make it stop.
+                        p
+                        |The timer can be fully controlled by adding a function called
+                        strong  stop()
+
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span>stop() {</span>
+                                    <span>   clearInterval(this.timerId); </span>
+                                    <span>   this.setState({ </span>
+                                    <span>        isRunning: false </span>
+                                    <span>    }) </span>
+                                    <span>} </span>
+
+                        p
+                        |The
+                        strong  stop()
+                        |  function changes the state of
+                        strong   isRunning
+                        |   and stops running
+                        strong   tick()
+                        |   by utilizing the function
+                        strong   clearInterval();
+
+                        p
+                        | Now we can call
+                        strong   stop()
+                        |   when the “Stop!” button is clicked.
+
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span> &lt;button onClick={()=>{this.stop()}}&gt Stop! &lt;/button&gt; </span>
+
+
+                        .border.m-2
+
+                        p
+                        |At this point, we’ve got a functional digital clock, but we want a
+                        strong  timer.
+
+                        p
+                        |Our timer should display the amount of time that has
+                        strong  elapsed
+                        |  while it is running.
+
+                        p
+                        |In order to calculate the amount of time that has elapsed we’ll need to know the following
+                        strong  states:
+
+                        p
+
+                            ol
+                                li    The time the timer was started
+                                li    The time it is now
+                                li   Whether or not the timer is running
+
+                        p
+                        |We already have a state to store the current time and to determine if the timer is running, so we just need one more to store the start time. We’ll call it
+                        strong   start.
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span> class Clock extends React.Component{ </span>
+                                    <span>      constructor(props){ </span>
+                                    <span>          super(props); </span>
+                                    <span>          This.state = { </span>
+                                    <span>              date: new Date(), </span>
+                                    <span>              isRunning: false, </span>
+                                    <span class= "highlight">              start: new Date() </span><span>        };</span>
+                                    <span>      }
+                                    <span>  render(){ </span>
+                                    <span>      ...</span>
+
+
+
+                        p
+                        |We’ll want to make sure the
+                        strong   start
+                        |   state gets updated whenever the timer starts.
+                        p
+                        | Let’s add it in our
+                        strong   start()
+                        |   function
+
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span>start() {</span>
+                                    <span>   this.setState({ </span>
+                                    <span class = "highlight">        start: new Date(), </span><span>        isRunning: true </span>
+                                    <span>    }) </span>
+                                    <span>    this.timerID = setInterval( </span>
+                                    <span>        () => this.tick(), </span>
+                                    <span>        1000 </span>
+                                    <span>        ); </span>
+                                    <span>    } </span>
+
+
+
+                        .border.m-2
+
+                        p
+                        | Next, we’ll want to make a function outside of our Clock class that compares the current time to the initial start time in a recognizable format.
+                        |    We’ll create a function called
+                        strong    UTCTime().
+
+                        p
+                            | The amount of time that has elapsed is equal to the
+                            strong   start time
+                            |   subtracted from the
+                            strong   current time.
+
+
+                            p
+                            | In order to display the
+                            strong   elapsed time
+                            |   in the traditional
+                            strong   hh:mm:ss format,
+                            |   we need to isolate the Hours, Minutes, and Seconds that have elapsed.
+                            |   We can easily find them by using the following JavaScript functions :
+
+                            p
+
+                                ul
+                                    li getUTCHours()
+                                    li getUTCMinutes()
+                                    li getUTCSeconds()
+
+
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span>function UTCTime(start,end) {</span>
+                                    <span>      let time = new Date(Math.abs(start-end)); </span>
+                                    <span>      let hours = time.getUTCHours();</span>
+                                    <span>      let minutes = time.getUTCMinutes();</span>
+                                    <span>      let seconds = time.getUTCSeconds(;)</span>
+                                    <span>      return( </span>
+                                    <span>        ... </span>
+                                    <span>    ); </span>
+                                    <span>} </span>
+
+
+                        .border.m-2
+
+
+
+                        p
+                        | These functions don’t provide leading zeros, which doesn’t fit with our
+                        strong   hh:mm:ss
+                        |  format.
+
+
+                        p
+                        | In the return function, we’ll do a check to see if the hours, minutes, and seconds are double digits or not and add a leading zero if needed.
+
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span>    return( </span>
+                                    <span>          (hours<10 ? '0' : '') + String(hours) + ':' + </span>
+                                    <span>          (minutes<10 ? '0' : '') + String(minutes) + ':' + </span>
+                                    <span>          (seconds<10 ? '0' : '') + String(seconds) </span>
+                                    <span>    ); </span>
+
+
+                        .border.m-2
+
+                        p
+                        | Now, we’ll replace
+                        strong    this.state.date.toLocaleTimeString()
+                        |  with our new
+                        strong  UTCTime()
+                        |   function, using the
+                        strong  date
+                        |   and
+                        strong   start
+                        |   states as parameters.
+
+                        .code.rounded
+                            div.m-2
+                                code
+                                    <span>...</span>
+                                    <span>      render(){</span>
+                                    <span>          return(</span>
+                                    <span>              &lt;div&gt;&lt;</span>
+                                    <span>                  &lt;button&gt; Start! &lt;/button&gt; </span>
+                                    <span>                  &lt;button&gt; Stop! &lt;/button&gt; </span>
+                                    <span class="highlight">                  &lt;p&gt; ${UTCTime(this.state.start,this.state.date)} &lt;/p&gt; </span><span>             &lt;/div&gt;</span>
+                                    <span>          );</span>
+                                    <span>      }</span>
+
+
+                        .border.m-2
+
+                        p
+                        | Finally, we'll call our Clock component in ReactDom.render()
+
+
+
+                        .code.rounded
+                            .m-2
+                                code
+                                    <span>ReactDOM.render( </span>
+                                    <span class="highlight">      &lt;Clock /&gt;, </span><span>      document.getElementById('root') </span>
+                                    <span> ); </span>
+
+
+
+                        p
+                        | And Voila! We now have a functional timer.
+
+                        p I hope you found this tutorial to be informational. For more resources on React check out the following documentation:
+
+
+                        ul
+                            li
+                                a(href="https://reactjs.org") https://reactjs.org
+
+                        ul
+                            li
+                                a(href="https://reactjs.org/tutorial/tutorial.html") https://reactjs.org/tutorial/tutorial.html
+
+
+                        .footer
