@@ -10,7 +10,7 @@ html {
 
 body {
     padding-top: 50px;
-    font: 25px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+    font: 16px "Lucida Grande", Helvetica, Arial, sans-serif !important;
 
 }
 
@@ -209,3 +209,4 @@ legend {
 .article p{
     margin-top: 25px;
 }
+
