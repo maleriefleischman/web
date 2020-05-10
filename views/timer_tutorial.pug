@@ -10,7 +10,7 @@ block content
                         div.res.clock
             .row
                 .col
-                    h1.display-4.font-italic Coding in React
+                    h1.display-4.font-italic React Timer Tutorial
                     p.lead.my-3
 
             .row
@@ -20,29 +20,41 @@ block content
 
                     div.my-3.article
 
+                        h4 Section 0: Intro
+
                         p In this tutorial, we will be going over how to create a digital timer in React.
+
                         p
                         i Why a digital timer,
                         |  you may ask? Because a digital timer demonstrates the most important strength of React. Updating UI
                         strong  quickly
                         |  and
                         strong  efficiently.
+
                         p
                         |React renders in a virtual DOM, called the
-                        strong  React DOM.
-                        |  The React DOM compares changes in an element and its children to the previous version, allowing it to only change the DOM where it is necessary.  This results in a faster, and more lightweight strategy for real time updates.
+                        a.font-weight-bold(href="https://reactjs.org/docs/react-dom.html")  React DOM.
+                        p  The React DOM compares changes in an element and its children to the previous version, allowing it to only change the DOM where it is necessary.
+                        p This results in a faster, and more lightweight strategy for real time updates.
+
+                        .border.my-3
+
+                        h4 Section 1: Getting Started
+
                         p
-                        | So, how do we get React to render?
+                        | To keep things light-weight, you can follow along with this tutorial through this codepen:
+                        ul
+                            li
+                                a.font-weight-bold(href="https://codepen.io/maleriefleischman/pen/NWGpqNd" target="_blank")  Timer Tutorial
+
                         p
-                        | First, we'll need a
-                        i  .html
+                        | In the codepen, you will see that we have an
+                        i  html
                         |  file, and a
-                        i  .js
+                        i  JavaScript
                         |  file.
                         p
-                        | Create an empty div in the body of our
-                        i   .html
-                        |   file with an
+                        | The html file includes an empty div with an
                         i   id="root".
 
 
@@ -59,13 +71,14 @@ block content
 
 
                         p
-                        | All of our React code will render within this div.
+                        | Our React App will render within this div.
 
 
                         p
-                        | Next, we run
+                        | Speaking of rendering, let's look at that next!
+                        p
+                        | At the bottom of the JavaScript file, we call
                         strong  ReactDOM.render()
-                        |   in our javascript file.
                         strong   ReactDOM.render()
                         |   requires two parameters:
                         p
@@ -79,28 +92,34 @@ block content
                                 pre
                                     code
                                         <span>ReactDOM.render( </span>
-                                        <span>      &lt;p&gt;Hello&lt;/p&gt;, </span>
+                                        <span>      &lt;Clock /&gt;, </span>
                                         <span>      document.getElementById('root') </span>
                                         <span> ); </span>
 
-
-
-                        .border.my-2
-
                         p
-                        |React is made up of plain objects called
-                        strong  elements
-                        |   which are created using
-                        strong   JSX.
+                        | Those of you who are familiar with JavaScript probably find the above code weird, or wrong.
+                        p
+                        | That’s because a portion of this code is not JavaScript, but an extension of JavaScript called
+                        strong  JSX.
+
+
+
+                        .border.my-3
+
+                        h4 Section 2: JSX & Elements
+
                         p
                         |
                         strong JSX
-                        |  is an HTML-like syntax extension of Javascript that looks and functions similar to HTML, but has the added benefit of harnessing Javascript variables and functions.
+                        |  looks and functions similar to HTML, but has the added benefit of harnessing JavaScript variables and functions.
+
                         p
-                        | Everything inside of our return function of the following code is an
-                        strong   element
-                        |   which has been written in
-                        strong  JSX.
+                        | It is used to create small plain objects referred to as
+                        strong  elements.
+
+                        p
+                        | Consider the following code:
+
 
                         .code.rounded
                             div.m-2
@@ -115,14 +134,41 @@ block content
                                         <span>}</span>
 
 
-                        .border.m-2
+
+
 
                         p
-                        |Elements can be returned inside of React
-                        strong  components.
+                        |The highlighted portions are elements written in
+                        strong   JSX.
+
                         p
-                        strong Components
-                        |  help to keep elements
+                        |
+                        strong JSX
+                        |   is useful, because it allows you to jump from using JavaScript to HTML in the same file.
+
+
+                        p
+                        | The JSX is surrounded by parenthesis to separate it from the surrounding JavaScript.
+                        p
+                        |The none highlighted portion is standard JavaScript where it is declaring a
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes")   JavaScript class
+                        |  as a
+                        strong  React Component.
+
+
+
+                        .border.my-3
+
+                        h4 Section 3: Components
+
+                        p
+                        |
+                        strong  Components
+                        |  are the building blocks of a React application.
+                        p
+                        |  They are made up of
+                        strong  elements
+                        |  and they help to keep elements
                         i  small, separate,
                         |  and
                         i  reusable.
@@ -135,18 +181,7 @@ block content
                         strong  state.
 
                         p
-                        |Elements can be generalized or updated by being passed
-                        strong  “props”
-                        |  (short for properties), which act like parameters for components.
-                        |Or by referencing their parent components
-                        strong  state,
-                        |  which functions similarly to props but is private and fully controlled by its parent component.
-
-                        p
-                        | In this case, we return these elements in a
-                        strong  Class Component
-                        |  called Clock:
-
+                        | The following class, is a simple component that returns plain HTML:
 
                         .code.rounded
                             div.m-2
@@ -164,7 +199,20 @@ block content
 
 
 
-                        .border.m-2
+                        .border.my-3
+
+                        h4 Section 4: Props & State
+
+                        p
+                            | Elements can be generalized or updated by being passed
+                            strong  “props”
+                            |  (short for properties), which act like parameters for components.
+                            | Or by referencing their parent components
+                            strong  state,
+                            |  which functions similarly to props but is private and fully controlled by its parent component.
+
+                        p
+                        | State is a javascript object, each component can have their own state, but they all filter down from the top level of the app.
 
                         p
                         | Declaring
@@ -176,9 +224,7 @@ block content
                             li
                                 p
                                 | First, we add a
-                                strong  class constructor
-                                |  to initiate
-                                strong  "this.state".
+                                a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor")  class constructor
 
                             li
                                 p
@@ -190,11 +236,11 @@ block content
                             li
                                 p
                                 | Finally, we define our state within
-                                strong  this.state{}.
+                                strong  this.state.
 
 
                         p
-                        |Here we have an example of initiating
+                        |Here we have an example of initializing
                         strong  state:
 
                         .code.rounded
@@ -210,23 +256,20 @@ block content
 
 
 
-                        .border.m-2
+                        .border.my-3
+
+                        h4 Section 5: Referencing State
 
                         p
-                        | Now that we have an initiated
+                        | Now that we have an initialized
                         strong  state,
-                        |  let’s try referencing it in an element inside the Clock class.
+                        |  let’s try using it in our render function.
 
                         p
                             strong Curly braces
-                            |  in JSX indicate that a JavaScript feature is about to be used, such as
-                            i  referencing a variable, props
-                            |  or
-                            i  state, running conditionals,
-                            |  or
-                            i  calling functions.
+                            |  in JSX indicate that we are jumping back to JavaScript
                             p
-                            | In this case, we'll use the curly braces to reference the state
+                            | In this case, we'll use the curly braces to reference the state property
                             strong  date.
 
 
@@ -259,9 +302,9 @@ block content
                         p
                         |  We’ll write a function called
                         strong  tick()
-                        |  that will update our
+                        |  that will update the
                         strong  date
-                        |  state:
+                        |  property within our state:
 
                         .code.rounded
                             .m-2
@@ -281,7 +324,7 @@ block content
                             |  is used when updating a state whereas
                             strong  this.state
                             |  is used when
-                            strong  initiating
+                            strong  initializing
                             |  a state.
                             | Be sure not to get them confused!
 
@@ -290,12 +333,11 @@ block content
                         strong  tick()
                         |  is called, React updates the
                         strong  date
-                        |  state, and the UI is re-rendered with the new state.
+                        |  property of state, and the UI is re-rendered with the new state.
 
                         p
                         | Let's call
-                        strong  tick(),
-                        |  when the
+                        |  our new function when the
                         strong  "Start!"
                         |  button is clicked.
 
@@ -368,9 +410,7 @@ block content
                         p
                         |Let's go ahead and call
                         strong  this.start()
-                        |  instead of
-                        strong  this.tick()
-                        |  in our element:
+                        |  when the Start! button is clicked
 
                         .code.rounded
                             .m-2
@@ -403,12 +443,12 @@ block content
                         p
                         |The
                         strong  stop()
-                        |  function changes the state of
+                        |  function updates state and changes
                         strong   isRunning
-                        |   and stops running
+                        |   to false. It then stops running
                         strong   tick()
-                        |   by utilizing the function
-                        strong   clearInterval();
+                        |   by utilizing the built in function
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval")   clearInterval();
 
                         p
                         | Now we can call
@@ -426,7 +466,7 @@ block content
                         .border.m-2
 
                         p
-                        |At this point, we’ve got a functional digital clock, but we want a
+                        |At this point, we’ve got a functioning digital clock that we can stop and start, but we want a
                         strong  timer.
 
                         p
@@ -446,8 +486,9 @@ block content
                                 li   Whether or not the timer is running
 
                         p
-                        |We already have a state to store the current time and to determine if the timer is running, so we just need one more to store the start time. We’ll call it
-                        strong   start.
+                        |We can use state to determine and store the above.
+                        p
+                        | Consider the following:
 
                         .code.rounded
                             .m-2
@@ -593,7 +634,7 @@ block content
                         .border.m-2
 
                         p
-                        | Finally, we'll call our Clock component in ReactDom.render()
+                        | Finally, initialize and render our Clock component in ReactDom.render()
 
 
 
