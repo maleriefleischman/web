@@ -48,12 +48,13 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>&lt;html&gt;</span>
-                                    <span>  &lt;head&gt;&lt;/head&gt;</span>
-                                    <span>  &lt;body&gt;</span>
-                                    <span class="highlight">      &lt;div id="root"&gt;&lt;/div&gt;</span><span>  &lt;/body&gt;</span>
-                                    <span>&lt;/html&gt;</span>
+                                pre
+                                    code
+                                        <span>&lt;html&gt;</span>
+                                        <span>      &lt;head&gt;&lt;/head&gt;</span>
+                                        <span>      &lt;body&gt;</span>
+                                        <span class="highlight">            &lt;div id="root"&gt;&lt;/div&gt;</span><span>      &lt;/body&gt;</span>
+                                        <span> &lt;/html&gt;</span>
 
 
 
@@ -75,11 +76,12 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>ReactDOM.render( </span>
-                                    <span>      &lt;p&gt;Hello&lt;/p&gt;, </span>
-                                    <span>      document.getElementById('root') </span>
-                                    <span> ); </span>
+                                pre
+                                    code
+                                        <span>ReactDOM.render( </span>
+                                        <span>      &lt;p&gt;Hello&lt;/p&gt;, </span>
+                                        <span>      document.getElementById('root') </span>
+                                        <span> ); </span>
 
 
 
@@ -102,14 +104,15 @@ block content
 
                         .code.rounded
                             div.m-2
-                                code
-                                    <span>class Clock extends React.Component{</span>
-                                    <span>  render(){</span>
-                                    <span>      return(</span>
-                                    <span class="highlight">          &lt;div&gt;&lt;</span><span class="highlight"></span><span class="highlight">              &lt;button&gt; Start! &lt;/button&gt; </span><span class="highlight">              &lt;button&gt; Stop! &lt;/button&gt; </span><span class="highlight">          &lt;/div&gt;&lt;</span>
-                                    <span>      );</span>
-                                    <span>  }</span>
-                                    <span>}</span>
+                                pre
+                                    code
+                                        <span>class Clock extends React.Component{</span>
+                                        <span>  render(){</span>
+                                        <span>      return(</span>
+                                        <span class="highlight">          &lt;div&gt;&lt;</span><span class="highlight"></span><span class="highlight">              &lt;button&gt; Start! &lt;/button&gt; </span><span class="highlight">              &lt;button&gt; Stop! &lt;/button&gt; </span><span class="highlight">          &lt;/div&gt;&lt;</span>
+                                        <span>      );</span>
+                                        <span>  }</span>
+                                        <span>}</span>
 
 
                         .border.m-2
@@ -147,16 +150,17 @@ block content
 
                         .code.rounded
                             div.m-2
-                                code
-                                    <span class="highlight">class Clock extends React.Component{</span><span>  render(){</span>
-                                    <span>      return(</span>
-                                    <span >          &lt;div&gt;&lt;</span>
-                                    <span>              &lt;button&gt; Start! &lt;/button&gt; </span>
-                                    <span>              &lt;button&gt; Stop! &lt;/button&gt; </span>
-                                    <span>          &lt;/div&gt;&lt;</span>
-                                    <span>      );</span>
-                                    <span>  }</span>
-                                    <span>}</span>
+                                pre
+                                    code
+                                        <span class="highlight">class Clock extends React.Component{</span><span>  render(){</span>
+                                        <span>      return(</span>
+                                        <span >          &lt;div&gt;&lt;</span>
+                                        <span>              &lt;button&gt; Start! &lt;/button&gt; </span>
+                                        <span>              &lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span>          &lt;/div&gt;&lt;</span>
+                                        <span>      );</span>
+                                        <span>  }</span>
+                                        <span>}</span>
 
 
 
@@ -195,13 +199,14 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>class Clock extends React.Component{</span>
-                                    <span> // step 1 </span>
-                                    <span class="highlight">  constructor(props){ </span><span>          // step 2 </span>
-                                    <span class="highlight">          super(props) </span><span>          // step 3 </span>
-                                    <span class="highlight">          this.state = {date: new Date()}; </span><span>      } </span>
-                                    <span> ... </span>
+                                pre
+                                    code
+                                        <span>class Clock extends React.Component{</span>
+                                        <span> // step 1 </span>
+                                        <span class="highlight">  constructor(props){ </span><span>          // step 2 </span>
+                                        <span class="highlight">          super(props) </span><span>          // step 3 </span>
+                                        <span class="highlight">          this.state = {date: new Date()}; </span><span>      } </span>
+                                        <span> ... </span>
 
 
 
@@ -227,16 +232,17 @@ block content
 
                         .code.rounded
                             div.m-2
-                                code
-                                    <span>...</span>
-                                    <span>      render(){</span>
-                                    <span>          return(</span>
-                                    <span>              &lt;div&gt;&lt;</span>
-                                    <span>                  &lt;button&gt; Start! &lt;/button&gt; </span>
-                                    <span>                  &lt;button&gt; Stop! &lt;/button&gt; </span>
-                                    <span class="highlight">                  &lt;p&gt; ${this.state.date.toLocaleTimeString()} &lt;/p&gt; </span><span>             &lt;/div&gt;</span>
-                                    <span>          );</span>
-                                    <span>      }</span>
+                                pre
+                                    code
+                                        <span>...</span>
+                                        <span>      render(){</span>
+                                        <span>          return(</span>
+                                        <span>              &lt;div&gt;&lt;</span>
+                                        <span>                  &lt;button&gt; Start! &lt;/button&gt; </span>
+                                        <span>                  &lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span class="highlight">                  &lt;p&gt; ${this.state.date.toLocaleTimeString()} &lt;/p&gt; </span><span>             &lt;/div&gt;</span>
+                                        <span>          );</span>
+                                        <span>      }</span>
 
 
 
@@ -259,12 +265,13 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>tick() {</span>
-                                    <span>    this.setState({ </span>
-                                    <span>    date: new Date() </span>
-                                    <span>      });</span>
-                                    <span>}</span>
+                                pre
+                                    code
+                                        <span>tick() {</span>
+                                        <span>    this.setState({ </span>
+                                        <span>    date: new Date() </span>
+                                        <span>      });</span>
+                                        <span>}</span>
 
 
 
@@ -296,11 +303,11 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-
-                                    <span> &lt;div&gt; </span>
-                                    <span class="highlight">      &lt;button onClick = {() => {this.tick()}}&gt; Start! &lt;/button&gt; </span><span>      &lt;button&gt; Stop! &lt;/button&gt; </span>
-                                    <span> &lt;/div&gt;</span>
+                                pre
+                                    code
+                                        <span> &lt;div&gt; </span>
+                                        <span class="highlight">      &lt;button onClick = {() => {this.tick()}}&gt; Start! &lt;/button&gt; </span><span>      &lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span> &lt;/div&gt;</span>
 
 
 
@@ -321,16 +328,17 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span> class Clock extends React.Component{ </span>
-                                    <span>      constructor(props){ </span>
-                                    <span>          super(props); </span>
-                                    <span>          This.state = { </span>
-                                    <span>              date: new Date(), </span>
-                                    <span class="highlight">              isRunning: false </span><span>        };</span>
-                                    <span>      }
-                                    <span>  render(){ </span>
-                                    <span>      ...</span>
+                                pre
+                                    code
+                                        <span> class Clock extends React.Component{ </span>
+                                        <span>      constructor(props){ </span>
+                                        <span>          super(props); </span>
+                                        <span>          This.state = { </span>
+                                        <span>              date: new Date(), </span>
+                                        <span class="highlight">              isRunning: false </span><span>        };</span>
+                                        <span>      }
+                                        <span>  render(){ </span>
+                                        <span>      ...</span>
 
 
                         p
@@ -344,16 +352,17 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>start() {</span>
-                                    <span>   this.setState({ </span>
-                                    <span>        isRunning: true </span>
-                                    <span>    }) </span>
-                                    <span>    this.timerID = setInterval( </span>
-                                    <span>        () => this.tick(), </span>
-                                    <span>        1000 </span>
-                                    <span>        ); </span>
-                                    <span>    } </span>
+                                pre
+                                    code
+                                        <span>start() {</span>
+                                        <span>   this.setState({ </span>
+                                        <span>        isRunning: true </span>
+                                        <span>    }) </span>
+                                        <span>    this.timerID = setInterval( </span>
+                                        <span>        () => this.tick(), </span>
+                                        <span>        1000 </span>
+                                        <span>        ); </span>
+                                        <span>    } </span>
 
 
                         p
@@ -365,8 +374,9 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span> &lt;button onClick={()=>{this.start()}}&gt Start! &lt;/button&gt; </span>
+                                pre
+                                    code
+                                        <span> &lt;button onClick={()=>{this.start()}}&gt Start! &lt;/button&gt; </span>
 
 
                         .border.m-2
@@ -381,13 +391,14 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>stop() {</span>
-                                    <span>   clearInterval(this.timerId); </span>
-                                    <span>   this.setState({ </span>
-                                    <span>        isRunning: false </span>
-                                    <span>    }) </span>
-                                    <span>} </span>
+                                pre
+                                    code
+                                        <span>stop() {</span>
+                                        <span>   clearInterval(this.timerId); </span>
+                                        <span>   this.setState({ </span>
+                                        <span>        isRunning: false </span>
+                                        <span>    }) </span>
+                                        <span>} </span>
 
                         p
                         |The
@@ -407,8 +418,9 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span> &lt;button onClick={()=>{this.stop()}}&gt Stop! &lt;/button&gt; </span>
+                                pre
+                                    code
+                                        <span> &lt;button onClick={()=>{this.stop()}}&gt Stop! &lt;/button&gt; </span>
 
 
                         .border.m-2
@@ -439,17 +451,18 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span> class Clock extends React.Component{ </span>
-                                    <span>      constructor(props){ </span>
-                                    <span>          super(props); </span>
-                                    <span>          This.state = { </span>
-                                    <span>              date: new Date(), </span>
-                                    <span>              isRunning: false, </span>
-                                    <span class= "highlight">              start: new Date() </span><span>        };</span>
-                                    <span>      }
-                                    <span>  render(){ </span>
-                                    <span>      ...</span>
+                                pre
+                                    code
+                                        <span> class Clock extends React.Component{ </span>
+                                        <span>      constructor(props){ </span>
+                                        <span>          super(props); </span>
+                                        <span>          This.state = { </span>
+                                        <span>              date: new Date(), </span>
+                                        <span>              isRunning: false, </span>
+                                        <span class= "highlight">              start: new Date() </span><span>        };</span>
+                                        <span>      }
+                                        <span>  render(){ </span>
+                                        <span>      ...</span>
 
 
 
@@ -465,16 +478,17 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>start() {</span>
-                                    <span>   this.setState({ </span>
-                                    <span class = "highlight">        start: new Date(), </span><span>        isRunning: true </span>
-                                    <span>    }) </span>
-                                    <span>    this.timerID = setInterval( </span>
-                                    <span>        () => this.tick(), </span>
-                                    <span>        1000 </span>
-                                    <span>        ); </span>
-                                    <span>    } </span>
+                                pre
+                                    code
+                                        <span>start() {</span>
+                                        <span>   this.setState({ </span>
+                                        <span class = "highlight">        start: new Date(), </span><span>        isRunning: true </span>
+                                        <span>    }) </span>
+                                        <span>    this.timerID = setInterval( </span>
+                                        <span>        () => this.tick(), </span>
+                                        <span>        1000 </span>
+                                        <span>        ); </span>
+                                        <span>    } </span>
 
 
 
@@ -511,16 +525,17 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>function UTCTime(start,end) {</span>
-                                    <span>      let time = new Date(Math.abs(start-end)); </span>
-                                    <span>      let hours = time.getUTCHours();</span>
-                                    <span>      let minutes = time.getUTCMinutes();</span>
-                                    <span>      let seconds = time.getUTCSeconds(;)</span>
-                                    <span>      return( </span>
-                                    <span>        ... </span>
-                                    <span>    ); </span>
-                                    <span>} </span>
+                                pre
+                                    code
+                                        <span>function UTCTime(start,end) {</span>
+                                        <span>      let time = new Date(Math.abs(start-end)); </span>
+                                        <span>      let hours = time.getUTCHours();</span>
+                                        <span>      let minutes = time.getUTCMinutes();</span>
+                                        <span>      let seconds = time.getUTCSeconds(;)</span>
+                                        <span>      return( </span>
+                                        <span>        ... </span>
+                                        <span>    ); </span>
+                                        <span>} </span>
 
 
 
@@ -538,12 +553,13 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>    return( </span>
-                                    <span>          (hours<10 ? '0' : '') + String(hours) + ':' + </span>
-                                    <span>          (minutes<10 ? '0' : '') + String(minutes) + ':' + </span>
-                                    <span>          (seconds<10 ? '0' : '') + String(seconds) </span>
-                                    <span>    ); </span>
+                                pre
+                                    code
+                                        <span>    return( </span>
+                                        <span>          (hours<10 ? '0' : '') + String(hours) + ':' + </span>
+                                        <span>          (minutes<10 ? '0' : '') + String(minutes) + ':' + </span>
+                                        <span>          (seconds<10 ? '0' : '') + String(seconds) </span>
+                                        <span>    ); </span>
 
 
                         .border.m-2
@@ -561,16 +577,17 @@ block content
 
                         .code.rounded
                             div.m-2
-                                code
-                                    <span>...</span>
-                                    <span>      render(){</span>
-                                    <span>          return(</span>
-                                    <span>              &lt;div&gt;&lt;</span>
-                                    <span>                  &lt;button&gt; Start! &lt;/button&gt; </span>
-                                    <span>                  &lt;button&gt; Stop! &lt;/button&gt; </span>
-                                    <span class="highlight">                  &lt;p&gt; ${UTCTime(this.state.start,this.state.date)} &lt;/p&gt; </span><span>             &lt;/div&gt;</span>
-                                    <span>          );</span>
-                                    <span>      }</span>
+                                pre
+                                    code
+                                        <span>...</span>
+                                        <span>      render(){</span>
+                                        <span>          return(</span>
+                                        <span>              &lt;div&gt;&lt;</span>
+                                        <span>                  &lt;button&gt; Start! &lt;/button&gt; </span>
+                                        <span>                  &lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span class="highlight">                  &lt;p&gt; ${UTCTime(this.state.start,this.state.date)} &lt;/p&gt; </span><span>             &lt;/div&gt;</span>
+                                        <span>          );</span>
+                                        <span>      }</span>
 
 
                         .border.m-2
@@ -582,10 +599,11 @@ block content
 
                         .code.rounded
                             .m-2
-                                code
-                                    <span>ReactDOM.render( </span>
-                                    <span class="highlight">      &lt;Clock /&gt;, </span><span>      document.getElementById('root') </span>
-                                    <span> ); </span>
+                                pre
+                                    code
+                                        <span>ReactDOM.render( </span>
+                                        <span class="highlight">      &lt;Clock /&gt;, </span><span>      document.getElementById('root') </span>
+                                        <span> ); </span>
 
 
 
