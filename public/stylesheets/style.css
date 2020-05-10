@@ -192,9 +192,8 @@ legend {
     min-width: 100%;
 }
 
-.code code {
+.code pre code {
 
-    font-size: 1rem;
     color: #e83e8c !important;
     padding: 15px;
     min-width: 100%;
@@ -208,5 +207,11 @@ legend {
 
 .article p{
     margin-top: 25px;
+}
+
+.code .m-2 pre
+{
+    margin-top: 0;
+    padding: 1rem 0 1rem 0;
 }
 
