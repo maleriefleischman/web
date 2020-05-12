@@ -39,7 +39,6 @@ body {
 
         font-size: 1rem;
         color: #e83e8c !important;
-        padding: 15px;
     }
 }
 
@@ -195,7 +194,6 @@ legend {
 .code pre code {
 
     color: #e83e8c !important;
-    padding: 15px;
     min-width: 100%;
 
 }
@@ -214,4 +212,21 @@ legend {
     margin-top: 0;
     padding: 1rem 0 1rem 0;
 }
+
+.indent-a{
+    padding-left: 25px;
+}
+
+.indent-b{
+    padding-left: 50px;
+}
+
+.indent-c{
+    padding-left: 100px;
+}
+
+.indent-d{
+    padding-left: 125px;
+}
+
 
