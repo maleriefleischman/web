@@ -26,7 +26,7 @@ block content
 
                         p
                         i Why a digital timer,
-                        |  you may ask? Because a digital timer demonstrates the most important strength of React. Updating UI
+                        |  you may ask? Because a digital timer demonstrates the most important strength of React: Updating UI
                         strong  quickly
                         |  and
                         strong  efficiently.
@@ -42,19 +42,19 @@ block content
                         h4 Section 1: Getting Started
 
                         p
-                        | To keep things light-weight, you can follow along with this tutorial through this codepen:
+                        | You can follow along with this tutorial through this codepen:
                         ul
                             li
                                 a.font-weight-bold(href="https://codepen.io/maleriefleischman/pen/NWGpqNd" target="_blank")  Timer Tutorial
 
                         p
                         | In the codepen, you will see that we have an
-                        i  html
+                        i  HTML
                         |  file, and a
                         i  JavaScript
                         |  file.
                         p
-                        | The html file includes an empty div with an
+                        | The HTML file includes an empty div with an
                         i   id="root".
 
 
@@ -63,9 +63,9 @@ block content
                                 pre
                                     code
                                         <span>&lt;html&gt;</span>
-                                        <span>      &lt;head&gt;&lt;/head&gt;</span>
-                                        <span>      &lt;body&gt;</span>
-                                        <span class="highlight">            &lt;div id="root"&gt;&lt;/div&gt;</span><span>      &lt;/body&gt;</span>
+                                        <span class="indent-a">&lt;head&gt;&lt;/head&gt;</span>
+                                        <span class="indent-a">&lt;body&gt;</span>
+                                        <span class="highlight indent-b">&lt;div id="root"&gt;&lt;/div&gt;</span><span class="indent-a">&lt;/body&gt;</span>
                                         <span> &lt;/html&gt;</span>
 
 
@@ -78,7 +78,9 @@ block content
                         | Speaking of rendering, let's look at that next!
                         p
                         | At the bottom of the JavaScript file, we call
-                        strong  ReactDOM.render()
+                        strong  ReactDOM.render().
+                        p
+                        |
                         strong   ReactDOM.render()
                         |   requires two parameters:
                         p
@@ -92,8 +94,8 @@ block content
                                 pre
                                     code
                                         <span>ReactDOM.render( </span>
-                                        <span>      &lt;Clock /&gt;, </span>
-                                        <span>      document.getElementById('root') </span>
+                                        <span class="indent-a">&lt;Clock /&gt;, </span>
+                                        <span class="indent-a">document.getElementById('root') </span>
                                         <span> ); </span>
 
                         p
@@ -126,11 +128,11 @@ block content
                                 pre
                                     code
                                         <span>class Clock extends React.Component{</span>
-                                        <span>  render(){</span>
-                                        <span>      return(</span>
-                                        <span class="highlight">          &lt;div&gt;&lt;</span><span class="highlight"></span><span class="highlight">              &lt;button&gt; Start! &lt;/button&gt; </span><span class="highlight">              &lt;button&gt; Stop! &lt;/button&gt; </span><span class="highlight">          &lt;/div&gt;&lt;</span>
-                                        <span>      );</span>
-                                        <span>  }</span>
+                                        <span class="indent-a">render(){</span>
+                                        <span class="indent-b">return(</span>
+                                        <span class="highlight indent-c">&lt;div&gt;</span><span class="highlight indent-d"></span><span class="highlight indent-d">&lt;button&gt; Start! &lt;/button&gt; </span><span class="highlight indent-d">&lt;button&gt; Stop! &lt;/button&gt; </span><span class="highlight indent-c">&lt;/div&gt;</span>
+                                        <span class="indent-b">);</span>
+                                        <span class="indent-a">}</span>
                                         <span>}</span>
 
 
@@ -144,7 +146,7 @@ block content
                         p
                         |
                         strong JSX
-                        |   is useful, because it allows you to jump from using JavaScript to HTML in the same file.
+                        |   is useful because it allows you to jump from using JavaScript to HTML in the same file.
 
 
                         p
@@ -165,37 +167,64 @@ block content
                         |
                         strong  Components
                         |  are the building blocks of a React application.
+
                         p
-                        |  They are made up of
-                        strong  elements
-                        |  and they help to keep elements
+                        |  They function more or less like
+                        strong  JavaScript functions
+                        |  and they help to split UI into
                         i  small, separate,
                         |  and
-                        i  reusable.
+                        i  reusable
+                        |  pieces.
                         p
                         |Components can be declared as a
                         strong  function
                         |  or an
                         strong  ES6 class.
                         |  Declaring a component as a class, allows for some additional features such as utilizing
-                        strong  state.
+                        strong  state
+                        |   (which we will touch on soon).
 
                         p
-                        | The following class, is a simple component that returns plain HTML:
+                        | Let's take another look at the code section we saw above:
 
                         .code.rounded
                             div.m-2
                                 pre
                                     code
-                                        <span class="highlight">class Clock extends React.Component{</span><span>  render(){</span>
-                                        <span>      return(</span>
-                                        <span >          &lt;div&gt;&lt;</span>
-                                        <span>              &lt;button&gt; Start! &lt;/button&gt; </span>
-                                        <span>              &lt;button&gt; Stop! &lt;/button&gt; </span>
-                                        <span>          &lt;/div&gt;&lt;</span>
-                                        <span>      );</span>
-                                        <span>  }</span>
+                                        <span class="highlight">class Clock extends React.Component{</span><span class="highlight indent-a">render(){</span><span class= "indent-b">return(</span>
+                                        <span class="indent-c">&lt;div&gt;</span>
+                                        <span class="indent-d">&lt;button&gt; Start! &lt;/button&gt; </span>
+                                        <span class="indent-d">&lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span class="indent-c">&lt;/div&gt;</span>
+                                        <span class="indent-b">);</span>
+                                        <span class="indent-a">}</span>
                                         <span>}</span>
+
+
+
+                        p
+                        | This is an example of a simple component that renders pure HTML.
+                        p
+                        | The JavaScript class "Clock" is declared as a
+                        strong   component
+                        |   by extending
+                        strong   React.Component
+                        p
+                        | Next, we see the
+                        strong  render()
+                        |  method.
+                        p
+                        |  This is a required method in a class component.
+                        p
+                        |Once called, it examines
+                        strong    this.props
+                        |  and
+                        strong  this.state
+                        |  (more on these in a moment)
+                        |  and returns
+                        strong  React elements.
+
 
 
 
@@ -204,16 +233,58 @@ block content
                         h4 Section 4: Props & State
 
                         p
-                            | Elements can be generalized or updated by being passed
-                            strong  “props”
-                            |  (short for properties), which act like parameters for components.
-                            | Or by referencing their parent components
-                            strong  state,
-                            |  which functions similarly to props but is private and fully controlled by its parent component.
+                        | Elements can be generalized or updated in two different ways. Either by being passed
+                        strong  props
+                        |  (short for properties),
+                        | or by referencing their parent components
+                        strong  state.
 
                         p
-                        | State is a javascript object, each component can have their own state, but they all filter down from the top level of the app.
+                        |State and props are both
+                        strong  plain JavaScript objects
+                        |   that
+                        strong   render updates in the UI
+                        |   when changed.
+                        p
+                        |  The main difference between the two is that
+                        strong  props
+                        |  function like parameters, they get
+                        i   passed to
+                        |   a component. Whereas
+                        strong  state
+                        |   is private, it is initialized
+                        i   inside of
+                        |   the component.
 
+                        p
+                        |  We'll mainly be using
+                        strong  state
+                        |   in this tutorial, but if you want to learn more about props and how it differs from state, check out the following articles:
+                        ul
+                            li
+                                a.font-weight-bold(href="https://reactjs.org/docs/components-and-props.html") Components and Props
+                            li
+                                a.font-weight-bold(href="https://github.com/uberVU/react-guide/blob/master/props-vs-state.md") props vs state
+
+
+                        p
+                        |  The main thing to keep in mind is that
+                        strong  props
+                        |   and
+                        strong  state
+                        |  are how React elements are
+                        strong  changed.
+
+
+                        h4.my-3 Section 4.1: Initializing State
+
+                        p
+                        | As stated above,
+                        strong  state
+                        |  is initialized inside of the component.
+                        p
+                        | Let's try that out now by declaring our timers
+                        strong  state.
                         p
                         | Declaring
                         strong   state
@@ -239,19 +310,15 @@ block content
                                 strong  this.state.
 
 
-                        p
-                        |Here we have an example of initializing
-                        strong  state:
-
                         .code.rounded
                             .m-2
                                 pre
                                     code
                                         <span>class Clock extends React.Component{</span>
-                                        <span> // step 1 </span>
-                                        <span class="highlight">  constructor(props){ </span><span>          // step 2 </span>
-                                        <span class="highlight">          super(props) </span><span>          // step 3 </span>
-                                        <span class="highlight">          this.state = {date: new Date()}; </span><span>      } </span>
+                                        <span class="indent-a">// step 1 </span>
+                                        <span class="highlight indent-a">constructor(props){ </span><span class="indent-b">// step 2 </span>
+                                        <span class="highlight indent-b">super(props) </span><span class="indent-b">// step 3 </span>
+                                        <span class="highlight indent-b">this.state = {date: new Date()}; </span><span class="indent-a">} </span>
                                         <span> ... </span>
 
 
@@ -278,14 +345,14 @@ block content
                                 pre
                                     code
                                         <span>...</span>
-                                        <span>      render(){</span>
-                                        <span>          return(</span>
-                                        <span>              &lt;div&gt;&lt;</span>
-                                        <span>                  &lt;button&gt; Start! &lt;/button&gt; </span>
-                                        <span>                  &lt;button&gt; Stop! &lt;/button&gt; </span>
-                                        <span class="highlight">                  &lt;p&gt; ${this.state.date.toLocaleTimeString()} &lt;/p&gt; </span><span>             &lt;/div&gt;</span>
-                                        <span>          );</span>
-                                        <span>      }</span>
+                                        <span class="indent-a">render(){</span>
+                                        <span class="indent-b">return(</span>
+                                        <span class="indent-c">&lt;div&gt;&lt;</span>
+                                        <span class="indent-d">&lt;button&gt; Start! &lt;/button&gt; </span>
+                                        <span class="indent-d">&lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span class="highlight indent-d">&lt;p&gt; ${this.state.date.toLocaleTimeString()} &lt;/p&gt; </span><span class="indent-c">&lt;/div&gt;</span>
+                                        <span class="indent-b">);</span>
+                                        <span class="indent-a">}</span>
 
 
 
@@ -310,10 +377,10 @@ block content
                             .m-2
                                 pre
                                     code
-                                        <span>tick() {</span>
-                                        <span>    this.setState({ </span>
-                                        <span>    date: new Date() </span>
-                                        <span>      });</span>
+                                        <span>tick(){</span>
+                                        <span class="indent-a">this.setState({ </span>
+                                        <span class="indent-b">date: new Date() </span>
+                                        <span class="indent-a">});</span>
                                         <span>}</span>
 
 
@@ -347,9 +414,9 @@ block content
                             .m-2
                                 pre
                                     code
-                                        <span> &lt;div&gt; </span>
-                                        <span class="highlight">      &lt;button onClick = {() => {this.tick()}}&gt; Start! &lt;/button&gt; </span><span>      &lt;button&gt; Stop! &lt;/button&gt; </span>
-                                        <span> &lt;/div&gt;</span>
+                                        <span>&lt;div&gt; </span>
+                                        <span class="highlight indent-a">&lt;button onClick = {() => {this.tick()}}&gt; Start! &lt;/button&gt; </span><span class="indent-a">&lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span>&lt;/div&gt;</span>
 
 
 
@@ -372,15 +439,15 @@ block content
                             .m-2
                                 pre
                                     code
-                                        <span> class Clock extends React.Component{ </span>
-                                        <span>      constructor(props){ </span>
-                                        <span>          super(props); </span>
-                                        <span>          This.state = { </span>
-                                        <span>              date: new Date(), </span>
-                                        <span class="highlight">              isRunning: false </span><span>        };</span>
-                                        <span>      }
-                                        <span>  render(){ </span>
-                                        <span>      ...</span>
+                                        <span>class Clock extends React.Component{ </span>
+                                        <span class="indent-a">constructor(props){ </span>
+                                        <span class="indent-b">super(props); </span>
+                                        <span class="indent-b">This.state = { </span>
+                                        <span class="indent-c">date: new Date(), </span>
+                                        <span class="highlight indent-c">isRunning: false </span><span class="indent-b">};</span>
+                                        <span class="indent-a">} </span>
+                                        <span class="indent-a">render(){</span>
+                                        <span class="indent-b">...</span>
 
 
                         p
@@ -397,14 +464,14 @@ block content
                                 pre
                                     code
                                         <span>start() {</span>
-                                        <span>   this.setState({ </span>
-                                        <span>        isRunning: true </span>
-                                        <span>    }) </span>
-                                        <span>    this.timerID = setInterval( </span>
-                                        <span>        () => this.tick(), </span>
-                                        <span>        1000 </span>
-                                        <span>        ); </span>
-                                        <span>    } </span>
+                                        <span class="indent-a">this.setState({ </span>
+                                        <span class="indent-b">isRunning: true </span>
+                                        <span class="indent-a">}) </span>
+                                        <span class="indent-a">this.timerID = setInterval( </span>
+                                        <span class="indent-b">() => this.tick(), </span>
+                                        <span class="indent-b">1000 </span>
+                                        <span class="indent-a">); </span>
+                                        <span>} </span>
 
 
                         p
@@ -434,11 +501,11 @@ block content
                                 pre
                                     code
                                         <span>stop() {</span>
-                                        <span>   clearInterval(this.timerId); </span>
-                                        <span>   this.setState({ </span>
-                                        <span>        isRunning: false </span>
-                                        <span>    }) </span>
-                                        <span>} </span>
+                                        <span class="indent-a">clearInterval(this.timerId); </span>
+                                        <span class="indent-b"> this.setState({ </span>
+                                        <span class="indent-c">isRunning: false </span>
+                                        <span class="indent-b">}) </span>
+                                        <span>}</span>
 
                         p
                         |The
@@ -460,7 +527,7 @@ block content
                             .m-2
                                 pre
                                     code
-                                        <span> &lt;button onClick={()=>{this.stop()}}&gt Stop! &lt;/button&gt; </span>
+                                        <span>&lt;button onClick={()=>{this.stop()}}&gt Stop! &lt;/button&gt; </span>
 
 
                         .border.m-2
@@ -494,16 +561,16 @@ block content
                             .m-2
                                 pre
                                     code
-                                        <span> class Clock extends React.Component{ </span>
-                                        <span>      constructor(props){ </span>
-                                        <span>          super(props); </span>
-                                        <span>          This.state = { </span>
-                                        <span>              date: new Date(), </span>
-                                        <span>              isRunning: false, </span>
-                                        <span class= "highlight">              start: new Date() </span><span>        };</span>
-                                        <span>      }
-                                        <span>  render(){ </span>
-                                        <span>      ...</span>
+                                        <span>class Clock extends React.Component{ </span>
+                                        <span class="indent-a">constructor(props){ </span>
+                                        <span class="indent-b">super(props); </span>
+                                        <span class="indent-b">This.state = { </span>
+                                        <span class="indent-c">date: new Date(), </span>
+                                        <span class="indent-c">isRunning: false, </span>
+                                        <span class= "highlight indent-c">start: new Date() </span><span class="indent-b">};</span>
+                                        <span class="indent-b">}
+                                        <span class="indent-a">render(){ </span>
+                                        <span>...</span>
 
 
 
@@ -522,14 +589,14 @@ block content
                                 pre
                                     code
                                         <span>start() {</span>
-                                        <span>   this.setState({ </span>
-                                        <span class = "highlight">        start: new Date(), </span><span>        isRunning: true </span>
-                                        <span>    }) </span>
-                                        <span>    this.timerID = setInterval( </span>
-                                        <span>        () => this.tick(), </span>
-                                        <span>        1000 </span>
-                                        <span>        ); </span>
-                                        <span>    } </span>
+                                        <span class="indent-a">this.setState({ </span>
+                                        <span class = "highlight indent-b">start: new Date(), </span><span class="indent-b">isRunning: true </span>
+                                        <span class="indent-a">}) </span>
+                                        <span class="indent-a">this.timerID = setInterval( </span>
+                                        <span class="indent-b">() => this.tick(), </span>
+                                        <span class="indent-b">1000 </span>
+                                        <span class="indent-a">); </span>
+                                        <span>} </span>
 
 
 
@@ -569,13 +636,13 @@ block content
                                 pre
                                     code
                                         <span>function UTCTime(start,end) {</span>
-                                        <span>      let time = new Date(Math.abs(start-end)); </span>
-                                        <span>      let hours = time.getUTCHours();</span>
-                                        <span>      let minutes = time.getUTCMinutes();</span>
-                                        <span>      let seconds = time.getUTCSeconds(;)</span>
-                                        <span>      return( </span>
-                                        <span>        ... </span>
-                                        <span>    ); </span>
+                                        <span class="indent-a">let time = new Date(Math.abs(start-end)); </span>
+                                        <span class="indent-a">let hours = time.getUTCHours();</span>
+                                        <span class="indent-a">let minutes = time.getUTCMinutes();</span>
+                                        <span class="indent-a">let seconds = time.getUTCSeconds(;)</span>
+                                        <span class="indent-a">return( </span>
+                                        <span class="indent-b">... </span>
+                                        <span class="indent-a">); </span>
                                         <span>} </span>
 
 
@@ -596,11 +663,12 @@ block content
                             .m-2
                                 pre
                                     code
-                                        <span>    return( </span>
-                                        <span>          (hours<10 ? '0' : '') + String(hours) + ':' + </span>
-                                        <span>          (minutes<10 ? '0' : '') + String(minutes) + ':' + </span>
-                                        <span>          (seconds<10 ? '0' : '') + String(seconds) </span>
-                                        <span>    ); </span>
+                                        <span>...</span>
+                                        <span class="indent-a">return( </span>
+                                        <span class="indent-b">(hours<10 ? '0' : '') + String(hours) + ':' + </span>
+                                        <span class="indent-b">(minutes<10 ? '0' : '') + String(minutes) + ':' + </span>
+                                        <span class="indent-b">(seconds<10 ? '0' : '') + String(seconds) </span>
+                                        <span class="indent-a">); </span>
 
 
                         .border.m-2
@@ -621,32 +689,17 @@ block content
                                 pre
                                     code
                                         <span>...</span>
-                                        <span>      render(){</span>
-                                        <span>          return(</span>
-                                        <span>              &lt;div&gt;&lt;</span>
-                                        <span>                  &lt;button&gt; Start! &lt;/button&gt; </span>
-                                        <span>                  &lt;button&gt; Stop! &lt;/button&gt; </span>
-                                        <span class="highlight">                  &lt;p&gt; ${UTCTime(this.state.start,this.state.date)} &lt;/p&gt; </span><span>             &lt;/div&gt;</span>
-                                        <span>          );</span>
-                                        <span>      }</span>
+                                        <span class="indent-a">render(){</span>
+                                        <span class="indent-b">return(</span>
+                                        <span class="indent-c">&lt;div&gt;</span>
+                                        <span class="indent-d">&lt;button&gt; Start! &lt;/button&gt; </span>
+                                        <span class="indent-d">&lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span class="highlight indent-d">&lt;p&gt; ${UTCTime(this.state.start,this.state.date)} &lt;/p&gt; </span><span class="indent-c">&lt;/div&gt;</span>
+                                        <span class="indent-b">);</span>
+                                        <span class="indent-a">}</span>
 
 
                         .border.m-2
-
-                        p
-                        | Finally, initialize and render our Clock component in ReactDom.render()
-
-
-
-                        .code.rounded
-                            .m-2
-                                pre
-                                    code
-                                        <span>ReactDOM.render( </span>
-                                        <span class="highlight">      &lt;Clock /&gt;, </span><span>      document.getElementById('root') </span>
-                                        <span> ); </span>
-
-
 
                         p
                         | We now have a functional timer!
