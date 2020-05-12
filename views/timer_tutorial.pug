@@ -79,6 +79,7 @@ block content
                         p
                         | At the bottom of the JavaScript file, we call
                         strong  ReactDOM.render().
+                        |   This function renders our React content.
                         p
                         |
                         strong   ReactDOM.render()
@@ -150,7 +151,7 @@ block content
 
 
                         p
-                        | The JSX is surrounded by parenthesis to separate it from the surrounding JavaScript.
+                        | The JSX is enclosed in parenthesis to separate it from the surrounding JavaScript.
                         p
                         |The none highlighted portion is standard JavaScript where it is declaring a
                         a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes")   JavaScript class
@@ -181,7 +182,7 @@ block content
                         strong  function
                         |  or an
                         strong  ES6 class.
-                        |  Declaring a component as a class, allows for some additional features such as utilizing
+                        |  Declaring a component as a class allows for some additional features such as utilizing
                         strong  state
                         |   (which we will touch on soon).
 
@@ -209,15 +210,13 @@ block content
                         | The JavaScript class "Clock" is declared as a
                         strong   component
                         |   by extending
-                        strong   React.Component
+                        strong   React.Component.
                         p
                         | Next, we see the
                         strong  render()
                         |  method.
                         p
-                        |  This is a required method in a class component.
-                        p
-                        |Once called, it examines
+                        |Once called, the render() method examines
                         strong    this.props
                         |  and
                         strong  this.state
@@ -307,7 +306,9 @@ block content
                             li
                                 p
                                 | Finally, we define our state within
-                                strong  this.state.
+                                strong  this.state
+                                |  and give it the property
+                                strong  date.
 
 
                         .code.rounded
@@ -350,7 +351,7 @@ block content
                                         <span class="indent-c">&lt;div&gt;&lt;</span>
                                         <span class="indent-d">&lt;button&gt; Start! &lt;/button&gt; </span>
                                         <span class="indent-d">&lt;button&gt; Stop! &lt;/button&gt; </span>
-                                        <span class="highlight indent-d">&lt;p&gt; ${this.state.date.toLocaleTimeString()} &lt;/p&gt; </span><span class="indent-c">&lt;/div&gt;</span>
+                                        <span class="highlight indent-d">&lt;p&gt; {this.state.date.toLocaleTimeString()} &lt;/p&gt; </span><span class="indent-c">&lt;/div&gt;</span>
                                         <span class="indent-b">);</span>
                                         <span class="indent-a">}</span>
 
@@ -360,18 +361,23 @@ block content
                         .border.m-2
 
 
+                        h4 Section 6: Changing State
+
+
                         p
                         |
-                        strong States
-                        |  can be updated through functions declared inside the
-                        strong   Class Component
+                        strong State
+                        |  can be updated through
+                        strong  child components
+                        |  declared inside the
+                        strong  parent component.
 
                         p
                         |  We’ll write a function called
                         strong  tick()
                         |  that will update the
                         strong  date
-                        |  property within our state:
+                        |  property of state:
 
                         .code.rounded
                             .m-2
@@ -387,9 +393,11 @@ block content
 
                         .alert.alert-warning
                             strong Note:
-                            strong  this.setState
-                            |  is used when updating a state whereas
-                            strong  this.state
+                            i  this.setState
+                            |  is used when
+                            strong  updating
+                            |  a state whereas
+                            i  this.state
                             |  is used when
                             strong  initializing
                             |  a state.
@@ -403,7 +411,40 @@ block content
                         |  property of state, and the UI is re-rendered with the new state.
 
                         p
-                        | Let's call
+                        | This is the first step towards making our timer
+                        strong  run.
+
+                        p
+                        | Like most standard timers, we'll want our timer to run when the user clicks on the
+                        strong  Start!
+                        |  button.
+
+                        p
+                        |
+                        i But how do we know when a button is clicked? And how do we trigger the function to run when it happens?
+
+                        p
+                        | We can address both of these concerns by
+                        |   passing the event handler
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick")  onClick
+                        |  to the tick() component.
+
+
+                        .border.my-3
+
+                        h4 Section 7: Passing Event Handlers to Components
+
+                        p
+                        |
+                        strong  onClick
+                        |  is an event handler that processes a
+                        strong  click
+                        |  event on a specific element.
+
+                        p
+                        | Let's use the
+                        strong   onClick
+                        |  event handler to call
                         |  our new function when the
                         strong  "Start!"
                         |  button is clicked.
@@ -414,23 +455,63 @@ block content
                             .m-2
                                 pre
                                     code
-                                        <span>&lt;div&gt; </span>
-                                        <span class="highlight indent-a">&lt;button onClick = {() => {this.tick()}}&gt; Start! &lt;/button&gt; </span><span class="indent-a">&lt;button&gt; Stop! &lt;/button&gt; </span>
-                                        <span>&lt;/div&gt;</span>
+                                        <span>render(){ </span>
+                                        <span class="indent-a">return( </span>
+                                        <span class="indent-b">&lt;div&gt; </span>
+                                        <span class="highlight indent-c">&lt;button onClick = {() => {this.tick()}}&gt; Start! &lt;/button&gt; </span><span class="indent-c">&lt;button&gt; Stop! &lt;/button&gt; </span>
+                                        <span class="indent-b">&lt;/div&gt;</span>
+                                        <span class="indent-a">) </span>
+                                        <span>} </span>
 
+
+
+                        p
+                        | Here, we use our curly braces to indicate that we are switching from HTML to JavaScript.
+
+                        p
+                        |  We then use an
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions")  arrow function
+                        |  to call and
+                        strong  bind
+                        |  the event handler to tick().
+
+                        p
+                        |
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind")  Binding
+                        |  is required to give the function access to component attributes like
+                        strong  this.props
+                        |  and
+                        strong  this.state.
+
+
+                        .alert.alert-warning.my-3
+                            strong Note:
+                            |  React offers several different ways to bind a function to a component instance. Check out Reacts
+                            a.font-weight-bold(href="https://reactjs.org/docs/faq-functions.html")  Handling Events
+                            |  article for information on the pros and cons of the different methods.
+
+
+                        p
+                        | At this point, we have a UI that updates every time the
+                        strong  Start!
+                        |  button is clicked.
+
+                        p
+                            i  But wait,
+                            |  you may be wondering,
+                            i  this is a timer, shouldn't it be updating every second until we tell it to stop?
+                            p  Well, you’re absolutely right. Let’s fix that now.
 
 
                         .border.m-2
 
-                        p
-                        i  But wait,
-                        |  you may be wondering,
-                        i  this is a timer, shouldn't it be updating every second until we tell it to stop?
-                        p  Well, you’re absolutely right. Let’s fix that now.
-
+                        h4 Section 8: Updating UI Each Second
 
                         p
-                        |We already have a state to store the current time, let’s create one more called
+                        | In order to create a ticking clock, we'll need a state property that can keep track of whether the timer should be running.
+
+                        p
+                        |Let’s add another state property called
                         strong  isRunning.
 
 
@@ -451,12 +532,11 @@ block content
 
 
                         p
-                        |Now we can create a function called
-                        strong  start()
-                        |  that can call the
+                        |Now we can create a component
+                        |  that can call
                         strong  tick()
-                        |  function every 1000 milliseconds (or 1 second) using
-                        strong  setInterval.
+                        |  every 1000 milliseconds (or 1 second) using
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval")  setInterval.
 
 
                         .code.rounded
@@ -486,13 +566,10 @@ block content
                                         <span> &lt;button onClick={()=>{this.start()}}&gt Start! &lt;/button&gt; </span>
 
 
-                        .border.m-2
-
-
                         p
                         | A timer isn’t very useful if you can't make it stop.
                         p
-                        |The timer can be fully controlled by adding a function called
+                        |We'll use the same idea we used above to create another component called
                         strong  stop().
 
 
@@ -514,8 +591,8 @@ block content
                         strong   isRunning
                         |   to false. It then stops running
                         strong   tick()
-                        |   by utilizing the built in function
-                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval")   clearInterval();
+                        |   by utilizing
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval")   clearInterval().
 
                         p
                         | Now we can call
@@ -532,8 +609,10 @@ block content
 
                         .border.m-2
 
+                        h4 Section 9: Formatting Time
+
                         p
-                        |At this point, we’ve got a functioning digital clock that we can stop and start, but we want a
+                        |At this point, we’ve got a functioning digital clock that we can stop and start; but we want a
                         strong  timer.
 
                         p
@@ -542,8 +621,8 @@ block content
                         |  while it is running.
 
                         p
-                        |In order to calculate the amount of time that has elapsed we’ll need to know the following
-                        strong  states:
+                        |In order to calculate the amount of time that has elapsed we’ll need to know the following state
+                        strong  properties:
 
                         p
 
@@ -553,9 +632,9 @@ block content
                                 li   Whether or not the timer is running
 
                         p
-                        |We can use state to determine and store the above.
+                        |We already have state properties to store the current time and whether the timer should be running.
                         p
-                        | Consider the following:
+                        |Let's add one more to store the time the clock was started:
 
                         .code.rounded
                             .m-2
@@ -577,7 +656,7 @@ block content
                         p
                         |We’ll want to make sure the
                         strong   start
-                        |   state gets updated whenever the timer starts.
+                        |   property of state gets updated whenever the timer starts.
                         p
                         | Let’s add it in our
                         strong   start()
@@ -599,13 +678,8 @@ block content
                                         <span>} </span>
 
 
-
-                        .border.m-2
-
                         p
-                        | Next, we’ll want to make a function outside of our Clock class that compares the current time to the initial start time in a recognizable format.
-                        |    We’ll create a function called
-                        strong    UTCTime().
+                        | Next, we’ll want to make a function outside of our Clock class that displays the elapsed time in a recognizable format.
 
                         p
                             | The amount of time that has elapsed is equal to the
@@ -625,9 +699,12 @@ block content
                             p
 
                                 ul
-                                    li getUTCHours()
-                                    li getUTCMinutes()
-                                    li getUTCSeconds()
+                                    li
+                                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCHours") getUTCHours()
+                                    li
+                                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMinutes") getUTCMinutes()
+                                    li
+                                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCSeconds") getUTCSeconds()
 
 
 
@@ -671,18 +748,20 @@ block content
                                         <span class="indent-a">); </span>
 
 
-                        .border.m-2
 
                         p
-                        | Now, we’ll replace
-                        strong    this.state.date.toLocaleTimeString()
-                        |  with our new
-                        strong  UTCTime()
-                        |   function, using the
-                        strong  date
-                        |   and
-                        strong   start
-                        |   states as parameters.
+                            | Finally, we replace
+                            strong    this.state.date.toLocaleTimeString()
+                            |  with our new
+                            strong  UTCTime()
+                            |   function.
+                            p
+                            | We then call
+                            strong  this.state.date
+                            |   and
+                            strong   this.state.start
+                            |   as the parameters.
+
 
                         .code.rounded
                             div.m-2
@@ -694,9 +773,11 @@ block content
                                         <span class="indent-c">&lt;div&gt;</span>
                                         <span class="indent-d">&lt;button&gt; Start! &lt;/button&gt; </span>
                                         <span class="indent-d">&lt;button&gt; Stop! &lt;/button&gt; </span>
-                                        <span class="highlight indent-d">&lt;p&gt; ${UTCTime(this.state.start,this.state.date)} &lt;/p&gt; </span><span class="indent-c">&lt;/div&gt;</span>
+                                        <span class="highlight indent-d">&lt;p&gt; {UTCTime(this.state.start,this.state.date)} &lt;/p&gt; </span><span class="indent-c">&lt;/div&gt;</span>
                                         <span class="indent-b">);</span>
                                         <span class="indent-a">}</span>
+
+
 
 
                         .border.m-2
