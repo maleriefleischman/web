@@ -112,7 +112,7 @@ body {
 }
 
 .nav-gradient{
-    background-image: linear-gradient(to right top, #845EC2, #2C73D2, #0081CF, #0089BA, #008E9B, #008F7A);
+    background-image: linear-gradient(to right top,#D65DB1, #845EC2, #2C73D2, #0081CF, #0089BA, #008F7A);
 }
 
 
@@ -122,26 +122,30 @@ body {
 
 a:hover{
     text-decoration: underline #D65DB1 !important;
-    background: -webkit-linear-gradient(#845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F);
+    background: -webkit-linear-gradient(#845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .dropdown-menu a:hover{
     text-decoration: underline #D65DB1 !important;
-    background: -webkit-linear-gradient(#845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F);
+    background: -webkit-linear-gradient(#845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+
 .article a{
-    background: -webkit-linear-gradient(#845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F);
+    background: -webkit-linear-gradient(#845EC2, #2C73D2, #0081CF, #0089BA, #008E9B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .article a:hover{
     text-decoration: underline #D65DB1 !important;
+    background: -webkit-linear-gradient(#845EC2, #2C73D2, #0081CF, #0089BA, #008E9B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .res{
@@ -192,7 +196,6 @@ legend {
 }
 
 .code pre code {
-
     color: #e83e8c !important;
     min-width: 100%;
 
