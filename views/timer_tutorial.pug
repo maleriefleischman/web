@@ -22,7 +22,9 @@ block content
 
                         h4 Section 0: Intro
 
-                        p In this tutorial, we will be going over how to create a digital timer in React.
+                        p
+                        |In this tutorial, we will be going over how to create a digital timer in
+                        a.font-weight-bold(href="https://reactjs.org/")  React.
 
                         p
                         i Why a digital timer,
@@ -34,7 +36,10 @@ block content
                         p
                         |React renders in a virtual DOM, called the
                         a.font-weight-bold(href="https://reactjs.org/docs/react-dom.html")  React DOM.
-                        p  The React DOM compares changes in an element and its children to the previous version, allowing it to only change the DOM where it is necessary.
+                        p
+                        |The React DOM compares changes in an element and its children to the previous version, allowing it to only change the
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model")   DOM
+                        |   where it is necessary.
                         p This results in a faster, and more lightweight strategy for real time updates.
 
                         .border.my-3
@@ -78,7 +83,7 @@ block content
                         | Speaking of rendering, let's look at that next!
                         p
                         | At the bottom of the JavaScript file, we call
-                        strong  ReactDOM.render().
+                        a.font-weight-bold(href="https://reactjs.org/docs/react-dom.html#render")  ReactDOM.render().
                         |   This function renders our React content.
                         p
                         |
@@ -100,10 +105,10 @@ block content
                                         <span> ); </span>
 
                         p
-                        | Those of you who are familiar with JavaScript probably find the above code weird, or wrong.
+                        | Those of you who are familiar with JavaScript will probably find the above code weird, or just plain wrong.
                         p
-                        | That’s because a portion of this code is not JavaScript, but an extension of JavaScript called
-                        strong  JSX.
+                        | That’s because a portion of this code is actually not JavaScript, but an extension of JavaScript called
+                        a.font-weight-bold(href="https://reactjs.org/docs/introducing-jsx.html")  JSX.
 
 
 
@@ -153,10 +158,14 @@ block content
                         p
                         | The JSX is enclosed in parenthesis to separate it from the surrounding JavaScript.
                         p
-                        |The none highlighted portion is standard JavaScript where it is declaring a
+                        |The non-highlighted portion is standard JavaScript, where we're declaring a
                         a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes")   JavaScript class
-                        |  as a
-                        strong  React Component.
+                        |  to create a
+                        a.font-weight-bold(href="https://reactjs.org/docs/components-and-props.html")  React Component.
+
+                        p
+                        | So what exactly is a
+                        strong  React component?
 
 
 
@@ -172,6 +181,8 @@ block content
                         p
                         |  They function more or less like
                         strong  JavaScript functions
+                        |  or
+                        strong  classes
                         |  and they help to split UI into
                         i  small, separate,
                         |  and
@@ -205,24 +216,22 @@ block content
 
 
                         p
-                        | This is an example of a simple component that renders pure HTML.
+                        | This is a simple example that renders some basic HTML.
                         p
                         | The JavaScript class "Clock" is declared as a
                         strong   component
                         |   by extending
-                        strong   React.Component.
+                        a.font-weight-bold(href="https://reactjs.org/docs/react-component.html")   React.Component.
                         p
                         | Next, we see the
-                        strong  render()
+                        a.font-weight-bold(href="https://reactjs.org/docs/react-component.html#render")  render()
                         |  method.
                         p
-                        |Once called, the render() method examines
-                        strong    this.props
-                        |  and
-                        strong  this.state
-                        |  (more on these in a moment)
-                        |  and returns
-                        strong  React elements.
+                        |This
+                        strong  render()
+                        |  method returns
+                        strong  React elements
+                        |  which instructs React on how to generate corresponding elements in the DOM.
 
 
 
@@ -240,9 +249,9 @@ block content
 
                         p
                         |State and props are both
-                        strong  plain JavaScript objects
+                        |  plain JavaScript objects
                         |   that
-                        strong   render updates in the UI
+                        |   render updates in the UI
                         |   when changed.
                         p
                         |  The main difference between the two is that
@@ -271,8 +280,8 @@ block content
                         strong  props
                         |   and
                         strong  state
-                        |  are how React elements are
-                        strong  changed.
+                        |  are how we control and update our
+                        strong   React components.
 
 
                         h4.my-3 Section 4.1: Initializing State
@@ -280,12 +289,12 @@ block content
                         p
                         | As stated above,
                         strong  state
-                        |  is initialized inside of the component.
+                        |  is initialized inside of components.
                         p
-                        | Let's try that out now by declaring our timers
+                        | Let's try that out now by initializing our timers
                         strong  state.
                         p
-                        | Declaring
+                        | Initializing
                         strong   state
                         |  requires three steps:
 
@@ -305,7 +314,7 @@ block content
 
                             li
                                 p
-                                | Finally, we define our state within
+                                | Finally, we initialize state by declaring
                                 strong  this.state
                                 |  and give it the property
                                 strong  date.
@@ -329,16 +338,17 @@ block content
                         h4 Section 5: Referencing State
 
                         p
-                        | Now that we have an initialized
+                        | Now that we've initialized
                         strong  state,
                         |  let’s try using it in our render function.
 
                         p
                             strong Curly braces
-                            |  in JSX indicate that we are jumping back to JavaScript
+                            |  in JSX indicate that we are jumping back to JavaScript.
                             p
-                            | In this case, we'll use the curly braces to reference the state property
-                            strong  date.
+                            | In this case, we'll use the curly braces to reference the state's
+                            strong  date
+                            |   property.
 
 
                         .code.rounded
@@ -368,7 +378,7 @@ block content
                         |
                         strong State
                         |  can be updated through
-                        strong  child components
+                        strong  methods
                         |  declared inside the
                         strong  parent component.
 
@@ -396,7 +406,7 @@ block content
                             i  this.setState
                             |  is used when
                             strong  updating
-                            |  a state whereas
+                            |  state whereas
                             i  this.state
                             |  is used when
                             strong  initializing
@@ -415,9 +425,11 @@ block content
                         strong  run.
 
                         p
-                        | Like most standard timers, we'll want our timer to run when the user clicks on the
+                        | Let’s get started with that by calling
+                        strong  tick()
+                        |  when the user clicks on the
                         strong  Start!
-                        |  button.
+                        |   button.
 
                         p
                         |
@@ -425,9 +437,11 @@ block content
 
                         p
                         | We can address both of these concerns by
-                        |   passing the event handler
-                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick")  onClick
-                        |  to the tick() component.
+                        |   passing an
+                        a.font-weight-bold(href="https://reactjs.org/docs/handling-events.html")  event handler
+                        |  to the
+                        strong  tick()
+                        |  method.
 
 
                         .border.my-3
@@ -435,11 +449,19 @@ block content
                         h4 Section 7: Passing Event Handlers to Components
 
                         p
-                        |
-                        strong  onClick
+                        | For those unfamiliar,
+                        strong   onClick
                         |  is an event handler that processes a
                         strong  click
                         |  event on a specific element.
+
+
+                        p
+                        |
+                        strong Careful!
+                        |  This isn’t your dad’s
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick")  onClick.
+                        |  React has it's own event handlers that function similarly, but are ultimately different from native JavaScript event handlers.
 
                         p
                         | Let's use the
@@ -466,14 +488,15 @@ block content
 
 
                         p
-                        | Here, we use our curly braces to indicate that we are switching from HTML to JavaScript.
+                        | Here, we use curly braces to indicate that we are switching from JSX to JavaScript.
 
                         p
                         |  We then use an
                         a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions")  arrow function
                         |  to call and
                         strong  bind
-                        |  the event handler to tick().
+                        |  the event handler to
+                        strong  tick().
 
                         p
                         |
@@ -492,14 +515,14 @@ block content
 
 
                         p
-                        | At this point, we have a UI that updates every time the
+                        | At this point we have a UI that updates every time the
                         strong  Start!
                         |  button is clicked.
 
                         p
                             i  But wait,
                             |  you may be wondering,
-                            i  this is a timer, shouldn't it be updating every second until we tell it to stop?
+                            i  this is a timer, shouldn't it be updating every second?
                             p  Well, you’re absolutely right. Let’s fix that now.
 
 
@@ -511,7 +534,7 @@ block content
                         | In order to create a ticking clock, we'll need a state property that can keep track of whether the timer should be running.
 
                         p
-                        |Let’s add another state property called
+                        |Let’s add another property to state called
                         strong  isRunning.
 
 
@@ -535,8 +558,8 @@ block content
                         |Now we can create a component
                         |  that can call
                         strong  tick()
-                        |  every 1000 milliseconds (or 1 second) using
-                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval")  setInterval.
+                        |  every 1000 milliseconds (or 1 second) using the native function
+                        a.font-weight-bold(href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval")  setInterval().
 
 
                         .code.rounded
@@ -569,7 +592,7 @@ block content
                         p
                         | A timer isn’t very useful if you can't make it stop.
                         p
-                        |We'll use the same idea we used above to create another component called
+                        |We'll use the same idea we used above to create another method called
                         strong  stop().
 
 
@@ -618,21 +641,20 @@ block content
                         p
                         |Our timer should display the amount of time that has
                         strong  elapsed
-                        |  while it is running.
+                        |  since it started.
 
                         p
-                        |In order to calculate the amount of time that has elapsed we’ll need to know the following state
-                        strong  properties:
+                        |In order to calculate the amount of time that has elapsed we’ll need to know the following:
 
                         p
 
                             ol
-                                li    The time the timer was started
+                                li    The time we started the timer
                                 li    The time it is now
-                                li   Whether or not the timer is running
+                                li   Whether or not the timer is currently running
 
                         p
-                        |We already have state properties to store the current time and whether the timer should be running.
+                        |We already have state properties to store the current time and whether the timer is running.
                         p
                         |Let's add one more to store the time the clock was started:
 
@@ -653,13 +675,13 @@ block content
 
 
                         p
-                        |We’ll want to make sure the
+                        |We’ll want to make sure our
                         strong   start
-                        |   property of state gets updated whenever the timer starts.
+                        |   property gets updated whenever the timer starts.
                         p
                         | Let’s add it in our
                         strong   start()
-                        |   function:
+                        |   method:
 
 
                         .code.rounded
@@ -726,13 +748,13 @@ block content
 
 
                         p
-                        | These functions don’t provide leading zeros, which doesn’t fit with our
+                        | These functions don’t provide leading zeros, which doesn't fit with our
                         strong   hh:mm:ss
                         |  format.
 
 
                         p
-                        | In the return function, we’ll do a check to see if the hours, minutes, and seconds are double digits or not and add a leading zero if needed.
+                        | In the return function, we’ll do a check to see if the hours, minutes, and seconds are double digits and add a leading zero if needed.
 
 
                         .code.rounded
@@ -755,7 +777,7 @@ block content
                             strong  UTCTime()
                             |   function.
                             p
-                            | We then call
+                            | We can then call
                             strong  this.state.date
                             |   and
                             strong   this.state.start
@@ -790,20 +812,25 @@ block content
                             .row
                                 .col
 
-                                    p I hope you found this tutorial to be informational.
+                                    p
+                                    |I hope you found this tutorial to be
+                                    i  informative
+                                    |  and
+                                    i  exhilarating.
+                                    p I know I did!
                                     p For more resources on React check out the following links:
 
                                     ul
                                         li
-                                            a(href="https://reactjs.org" target="_blank") https://reactjs.org
+                                            a.font-weight-bold(href="https://reactjs.org" target="_blank") https://reactjs.org
 
                                         li
-                                            a(href="https://reactjs.org/tutorial/tutorial.html" target="_blank") https://reactjs.org/tutorial/tutorial.html
+                                            a.font-weight-bold(href="https://reactjs.org/tutorial/tutorial.html" target="_blank") https://reactjs.org/tutorial/tutorial.html
 
                                         li
-                                            a(href="https://reactjs.org/blog/2020/02/26/react-v16.13.0.html" target="_blank") https://reactjs.org/blog/2020/02/26/react-v16.13.0.html
+                                            a.font-weight-bold(href="https://reactjs.org/blog/2020/02/26/react-v16.13.0.html" target="_blank") https://reactjs.org/blog/2020/02/26/react-v16.13.0.html
 
                                         li
-                                            a(href="https://reactjs.org/community/support.html" target="_blank") https://reactjs.org/community/support.html
+                                            a.font-weight-bold(href="https://reactjs.org/community/support.html" target="_blank") https://reactjs.org/community/support.html
 
 
