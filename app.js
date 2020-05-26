@@ -67,8 +67,8 @@ app.use(function(err, req, res, next) {
 /**
  * Get SSL configuration
  * */
-const key = fs.readFileSync('/etc/letsencrypt/live/maleriefleischman.com/privkey.pem');
-const cert = fs.readFileSync('/etc/letsencrypt/live/maleriefleischman.com/fullchain.pem');
+const key = fs.readFileSync('/etc/pki/tls/private/maleriefleischman.com.key');
+const cert = fs.readFileSync('/etc/pki/tls/certs/maleriefleischman.com.cert');
 const sslopts = {
     key: key,
     cert: cert
