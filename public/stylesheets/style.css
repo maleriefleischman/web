@@ -47,23 +47,23 @@ body {
 }
 
 .uw {
-    background: url("https://ischool.uw.edu/sites/default/files/2017-08/suzz_front-1.jpg") no-repeat;
+    background: url("/images/suzz_front-1.jpg") no-repeat;
     background-size: cover;
 }
 
 .bp{
-    background: url("https://bpcs.com/asset/5d2e3b909da1c") no-repeat;
+    background: url("/images/laptop.jpeg") no-repeat;
     background-size: cover;
 }
 
 .lt{
-    background: url("https://www.bi-landtrust.org/wp-content/uploads/2018/09/Cougar-Creek_tree-trunk-1.jpg") no-repeat;
+    background: url("/images/Cougar-Creek_tree-trunk-1.jpg") no-repeat;
     background-size: cover;
 
 }
 
 .fp{
-    background: url("https://cdcssl.ibsrv.net/ibimg/smb/1067x1067_80/webmgr/0o/j/x/5c4205caaabfd_vet1.jpg") no-repeat;
+    background: url("/images/vet1.jpg") no-repeat;
     background-size: cover;
 }
 
