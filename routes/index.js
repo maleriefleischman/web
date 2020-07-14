@@ -18,4 +18,8 @@ router.get('/beer', function(req, res, next){
     res.render('beer', { title: 'Jquery Beer Calculator'});
 });
 
+router.get('/dice', function(req, res, next){
+    res.render('dice', { title: 'Dice Roller'});
+});
+
 module.exports = router;
