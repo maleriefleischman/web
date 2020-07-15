@@ -88,7 +88,7 @@ class DicePool extends React.Component{
                     <div className='row'>
                         <div className='col-sm-4'>
                             <div className='form-group'>
-                                <label for='dice'>Dice Type  </label>
+                                <label htmlFor='dice'>Dice Type  </label>
                                 <select className = 'form-control' name='dice' value={this.state.sides}  onChange = {this.updateSides}>
                                     <option value='4'>4 Sided Die</option>
                                     <option value='6'>6 Sided Die</option>
@@ -101,7 +101,7 @@ class DicePool extends React.Component{
                         </div>
                         <div className='col-sm-4'>
                             <div className='form-group'>
-                                <label for='poolSize'>Pool Size  </label>
+                                <label htmlFor='poolSize'>Pool Size  </label>
                                 <select className = 'form-control' name='poolSize'  value={this.state.poolSize}  onChange = {this.updatePoolSize}>
                                     <option value='1'>1 Die</option>
                                     <option value='2'>2 Die</option>
@@ -118,7 +118,7 @@ class DicePool extends React.Component{
                         </div>
                         <div className='col-sm-4'>
                             <div className='form-group'>
-                                <label for='target'>Target Number  </label>
+                                <label htmlFor='target'>Target Number  </label>
                                 <select className = 'form-control' name='target'  value={this.state.updateTarget}  onChange = {this.updateTarget}>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
@@ -144,11 +144,11 @@ class DicePool extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div classname='row'>
+                    <div className='row'>
                         <div className='form-check form-check-inline'>
 
                             <input className="form-check-input" type="checkbox" id="botch" onClick={this.highlightBotch}></input>
-                            <label class="form-check-label" for="botch">
+                            <label className="form-check-label" htmlFor="botch">
                                 Highlight Botches
                             </label>
 
@@ -156,14 +156,14 @@ class DicePool extends React.Component{
                         <div className='form-check form-check-inline'>
 
                             <input className="form-check-input" type="checkbox" id="success" onClick={this.highlightSuccess}></input>
-                            <label class="form-check-label" for="success">
+                            <label className="form-check-label" htmlFor="success">
                                 Highlight Successes
                             </label>
 
                         </div>
                         <div className='form-check form-check-inline'>
                             <input className="form-check-input" type="checkbox" id="crit" onClick={this.highlightCrit}></input>
-                            <label class="form-check-label" for="crit">
+                            <label className="form-check-label" htmlFor="crit">
                                 Highlight Crits
                             </label>
                         </div>
@@ -175,7 +175,7 @@ class DicePool extends React.Component{
                     </div>
                 </div>
                 <div className='row'>
-                    {rolls.map(x=>{
+                    {rolls.map((x, index)=>{
                         return <Dice
                             roll = {x}
                             target = {target}
@@ -183,6 +183,7 @@ class DicePool extends React.Component{
                             crit = {crit}
                             success = {success}
                             botch = {botch}
+                            key = {index}
                         />
                     })}
                 </div>
@@ -194,9 +195,9 @@ class DicePool extends React.Component{
 
 class Dice extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
-        }
+        };
         this.colorMap = this.colorMap.bind(this);
 
     }
@@ -235,4 +236,4 @@ class Dice extends React.Component{
 ReactDOM.render(
     <DicePool/>,
     document.getElementById('root')
-)
+);
