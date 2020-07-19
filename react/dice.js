@@ -1,23 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class DicePool extends React.Component{
-    constructor(props){
+
+class Cards extends React.Component{
+    constructor(props) {
         super(props);
         this.state = {
-            poolSize: 1,
-            sides: 20,
-            rolls:[],
-            target: 0,
             botch: false,
             success: false,
             crit: false
         };
 
-        this.updatePoolSize = this.updatePoolSize.bind(this);
-        this.updateSides = this.updateSides.bind(this);
-        this.updateRolls = this.updateRolls.bind(this);
-        this.updateTarget = this.updateTarget.bind(this);
         this.highlightCrit = this.highlightCrit.bind(this);
         this.highlightSuccess = this.highlightSuccess.bind(this);
         this.highlightBotch = this.highlightBotch.bind(this);
@@ -37,6 +30,84 @@ class DicePool extends React.Component{
         const botch = this.state.botch;
         this.setState({botch : !botch})
     }
+
+
+    render(){
+
+        const crit = this.state.crit;
+        const success = this.state.success;
+        const botch = this.state.botch;
+
+        return(
+            <div className="container">
+                <div>
+                    <p className='h1 text-center'>DiceRoll!</p>
+                    <p className='font-weight-light text-center'>Forget your dice? No worries, I've got your back.</p>
+                    <p className='font-weight-light text-center'>Roll up to 10 of any sided die at once.</p>
+                    <p className='font-weight-light text-center'>Count your Successes, Crits, and Botches at a glace with the ultimate bag of dice that won't leave your side.</p>
+
+                    <form className="mx-4">
+                        <div className='row'>
+                            <div className='form-check form-check-inline'>
+
+                                <input className="form-check-input" type="checkbox" id="botch" onClick={this.highlightBotch}></input>
+                                <label className="form-check-label" htmlFor="botch">
+                                    Highlight Botches
+                                </label>
+
+                            </div>
+                            <div className='form-check form-check-inline'>
+
+                                <input className="form-check-input" type="checkbox" id="success" onClick={this.highlightSuccess}></input>
+                                <label className="form-check-label" htmlFor="success">
+                                    Highlight Successes
+                                </label>
+
+                            </div>
+                            <div className='form-check form-check-inline'>
+                                <input className="form-check-input" type="checkbox" id="crit" onClick={this.highlightCrit}></input>
+                                <label className="form-check-label" htmlFor="crit">
+                                    Highlight Crits
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <DicePool
+                    crit = {crit}
+                    success = {success}
+                    botch = {botch}
+                />
+                <DicePool
+                    crit = {crit}
+                    success = {success}
+                    botch = {botch}
+                />
+            </div>
+        )
+    }
+
+}
+
+class DicePool extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            poolSize: 1,
+            sides: 20,
+            rolls:[],
+            target: 0,
+
+        };
+
+        this.updatePoolSize = this.updatePoolSize.bind(this);
+        this.updateSides = this.updateSides.bind(this);
+        this.updateRolls = this.updateRolls.bind(this);
+        this.updateTarget = this.updateTarget.bind(this);
+
+    }
+
 
 
     updateTarget(event){
@@ -70,19 +141,15 @@ class DicePool extends React.Component{
         const sides = this.state.sides;
         const rolls = this.state.rolls;
         const target = this.state.target;
-        const crit = this.state.crit;
-        const success = this.state.success;
-        const botch = this.state.botch;
+        const crit = this.props.crit;
+        const success = this.props.success;
+        const botch = this.props.botch;
 
 
 
         return(
-            <div className = 'container my-3'>
-                <div>
-                    <p className='h1 text-center'>DiceRoll!</p>
-                    <p className='font-weight-light text-center'>Forget your dice? No worries, I've got your back.</p>
-                    <p className='font-weight-light text-center'>Roll up to 10 of any sided die at once.</p>
-                    <p className='font-weight-light text-center'>Count your Successes, Crits, and Botches at a glace with the ultimate bag of dice that won't leave your side.</p>
+            <div className = 'container'>
+                <div className= {'header my-3 dice-background ' + 'sides'+sides}>
                 </div>
                 <form>
                     <div className='row'>
@@ -144,30 +211,6 @@ class DicePool extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className='row'>
-                        <div className='form-check form-check-inline'>
-
-                            <input className="form-check-input" type="checkbox" id="botch" onClick={this.highlightBotch}></input>
-                            <label className="form-check-label" htmlFor="botch">
-                                Highlight Botches
-                            </label>
-
-                        </div>
-                        <div className='form-check form-check-inline'>
-
-                            <input className="form-check-input" type="checkbox" id="success" onClick={this.highlightSuccess}></input>
-                            <label className="form-check-label" htmlFor="success">
-                                Highlight Successes
-                            </label>
-
-                        </div>
-                        <div className='form-check form-check-inline'>
-                            <input className="form-check-input" type="checkbox" id="crit" onClick={this.highlightCrit}></input>
-                            <label className="form-check-label" htmlFor="crit">
-                                Highlight Crits
-                            </label>
-                        </div>
-                    </div>
                 </form>
                 <div className='row my-4'>
                     <div className ='col'>
@@ -186,9 +229,6 @@ class DicePool extends React.Component{
                             key = {index}
                         />
                     })}
-                </div>
-                <div className={'sides'+sides}>
-                    <div className='dice-background'></div>
                 </div>
             </div>
         )
@@ -237,6 +277,6 @@ class Dice extends React.Component{
 }
 
 ReactDOM.render(
-    <DicePool/>,
+    <Cards/>,
     document.getElementById('root')
 );
