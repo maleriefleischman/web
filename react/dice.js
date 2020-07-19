@@ -224,7 +224,7 @@ class Dice extends React.Component{
                 <div className="row">
                     <div className="col">
                         <div className={'border ' + this.colorMap()}>
-                            <p className='text-center'>{roll}</p>
+                            <p className='text-center roll'>{roll}</p>
                         </div>
                     </div>
                 </div>

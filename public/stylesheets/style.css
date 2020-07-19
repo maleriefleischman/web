@@ -175,6 +175,9 @@ legend {
 
 #beer{
     margin:1.5rem;
+    background-image: url("/images/bubs.png");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .clock{
@@ -230,6 +233,10 @@ legend {
 
 .indent-d{
     padding-left: 125px;
+}
+
+.roll{
+    margin: 1rem;
 }
 
 
