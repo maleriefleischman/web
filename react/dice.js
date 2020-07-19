@@ -187,6 +187,9 @@ class DicePool extends React.Component{
                         />
                     })}
                 </div>
+                <div className={'sides'+sides}>
+                    <div className='dice-background'></div>
+                </div>
             </div>
         )
     }
@@ -208,7 +211,7 @@ class Dice extends React.Component{
         switch(true){
             case (roll === 1 && botch):
                 return 'bg-danger';
-            case (roll === sides && crit):
+            case (roll == sides && crit):
                 return 'bg-warning';
             case (roll >= target && success):
                 return 'bg-success';

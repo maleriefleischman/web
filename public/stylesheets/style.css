@@ -239,4 +239,43 @@ legend {
     margin: 1rem;
 }
 
+.sides20{
+     background-image: url("/images/20sided.svg");
+     background-repeat: no-repeat;
+     background-size: 100px;
+}
+
+.sides12{
+    background-image: url("/images/12sided.svg");
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+
+.sides10{
+    background-image: url("/images/10sided.svg");
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+
+.sides8{
+    background-image: url("/images/8sided.svg");
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+
+.sides6{
+    background-image: url("/images/6sided.svg");
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+
+.sides4{
+    background-image: url("/images/4sided.svg");
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+
+.dice-background{
+    padding: 100px;
+}
 
