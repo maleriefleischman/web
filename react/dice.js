@@ -49,6 +49,10 @@ class Cards extends React.Component{
                     <p className='font-weight-light text-center'>Count your Successes, Crits, and Botches at a glace with the ultimate bag of dice that won't leave your side.</p>
 
                     <form className="mx-4">
+                        <div className='form-row'>
+                            <input placeholder='Slot Name'></input>
+                            <button type="button" className="btn btn-primary">Add a New Slot</button>
+                        </div>
                         <div className='row'>
                             <div className='form-check form-check-inline'>
 
@@ -75,17 +79,18 @@ class Cards extends React.Component{
                         </div>
                     </form>
                 </div>
-
-                {slots.map((x,index)=>{
-                    return <DicePool
-                        crit = {crit}
-                        success = {success}
-                        botch = {botch}
-                        key = {index}
-                        id = {index}
-                    />
-                    })
+                <div className='row'>
+                        {slots.map((x,index)=>{
+                            return <DicePool
+                                crit = {crit}
+                                success = {success}
+                                botch = {botch}
+                                key = {index}
+                                id = {index}
+                            />
+                            })
                 }
+                </div>
             </div>
         )
     }
@@ -151,8 +156,8 @@ class DicePool extends React.Component{
 
 
         return(
-            <div className = 'card'>
-                <div className= 'card-header' data-toggle="collapse" data-target={'#dice'+id}>
+            <div className = 'card col-md-6 col-sm'>
+                <div className= 'card-header' data-target={'#dice'+id}>
                     <div className='row'>
                         <div className='col-1'>
                             <div className={ 'dice-background ' + 'sides'+sides}></div>
@@ -162,7 +167,7 @@ class DicePool extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className='card-body collapse' id={'dice'+id}>
+                <div className='card-body' id={'dice'+id}>
                     <form>
                         <div className='row'>
                             <div className='col-sm-4'>
