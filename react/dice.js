@@ -8,7 +8,8 @@ class Cards extends React.Component{
         this.state = {
             botch: false,
             success: false,
-            crit: false
+            crit: false,
+            slots: [{name:'Magic Spell'},{name:'Melee Attack'}]
         };
 
         this.highlightCrit = this.highlightCrit.bind(this);
@@ -37,6 +38,7 @@ class Cards extends React.Component{
         const crit = this.state.crit;
         const success = this.state.success;
         const botch = this.state.botch;
+        const slots = this.state.slots;
 
         return(
             <div className="container">
@@ -74,16 +76,16 @@ class Cards extends React.Component{
                     </form>
                 </div>
 
-                <DicePool
-                    crit = {crit}
-                    success = {success}
-                    botch = {botch}
-                />
-                <DicePool
-                    crit = {crit}
-                    success = {success}
-                    botch = {botch}
-                />
+                {slots.map((x,index)=>{
+                    return <DicePool
+                        crit = {crit}
+                        success = {success}
+                        botch = {botch}
+                        key = {index}
+                        id = {index}
+                    />
+                    })
+                }
             </div>
         )
     }
@@ -144,91 +146,96 @@ class DicePool extends React.Component{
         const crit = this.props.crit;
         const success = this.props.success;
         const botch = this.props.botch;
+        const id = this.props.id;
 
 
 
         return(
-            <div className = 'container'>
-                <div className= {'header my-3 dice-background ' + 'sides'+sides}>
+            <div className = 'card'>
+                <div className= 'card-header my-3' data-toggle="collapse" data-target={'#dice'+id}>
+                    <div className={ 'dice-background ' + 'sides'+sides}></div>
+                    <h3 className='card-title'>Dice Group Title</h3>
                 </div>
-                <form>
+                <div className='card-body collapse' id={'dice'+id}>
+                    <form>
+                        <div className='row'>
+                            <div className='col-sm-4'>
+                                <div className='form-group'>
+                                    <label htmlFor='dice'>Dice Type  </label>
+                                    <select className = 'form-control' name='dice' value={this.state.sides}  onChange = {this.updateSides}>
+                                        <option value='4'>4 Sided Die</option>
+                                        <option value='6'>6 Sided Die</option>
+                                        <option value='8'>8 Sided Die</option>
+                                        <option value='10'>10 Sided Die</option>
+                                        <option value='12'>12 Sided Die</option>
+                                        <option value='20'>20 Sided Die</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className='col-sm-4'>
+                                <div className='form-group'>
+                                    <label htmlFor='poolSize'>Pool Size  </label>
+                                    <select className = 'form-control' name='poolSize'  value={this.state.poolSize}  onChange = {this.updatePoolSize}>
+                                        <option value='1'>1 Die</option>
+                                        <option value='2'>2 Die</option>
+                                        <option value='3'>3 Die</option>
+                                        <option value='4'>4 Die</option>
+                                        <option value='5'>5 Die</option>
+                                        <option value='6'>6 Die</option>
+                                        <option value='7'>7 Die</option>
+                                        <option value='8'>8 Die</option>
+                                        <option value='9'>9 Die</option>
+                                        <option value='10'>10 Die</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className='col-sm-4'>
+                                <div className='form-group'>
+                                    <label htmlFor='target'>Target Number  </label>
+                                    <select className = 'form-control' name='target'  value={this.state.updateTarget}  onChange = {this.updateTarget}>
+                                        <option value='1'>1</option>
+                                        <option value='2'>2</option>
+                                        <option value='3'>3</option>
+                                        <option value='4'>4</option>
+                                        <option value='5'>5</option>
+                                        <option value='6'>6</option>
+                                        <option value='7'>7</option>
+                                        <option value='8'>8</option>
+                                        <option value='9'>9</option>
+                                        <option value='10'>10</option>
+                                        <option value='11'>11</option>
+                                        <option value='12'>12</option>
+                                        <option value='13'>13</option>
+                                        <option value='14'>14</option>
+                                        <option value='15'>15</option>
+                                        <option value='16'>16</option>
+                                        <option value='17'>17</option>
+                                        <option value='18'>18</option>
+                                        <option value='19'>19</option>
+                                        <option value='20'>20</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div className='row my-4'>
+                        <div className ='col'>
+                            <button className='btn btn-outline-primary btn-lg btn-block' onClick={this.updateRolls}>Roll!</button>
+                        </div>
+                    </div>
                     <div className='row'>
-                        <div className='col-sm-4'>
-                            <div className='form-group'>
-                                <label htmlFor='dice'>Dice Type  </label>
-                                <select className = 'form-control' name='dice' value={this.state.sides}  onChange = {this.updateSides}>
-                                    <option value='4'>4 Sided Die</option>
-                                    <option value='6'>6 Sided Die</option>
-                                    <option value='8'>8 Sided Die</option>
-                                    <option value='10'>10 Sided Die</option>
-                                    <option value='12'>12 Sided Die</option>
-                                    <option value='20'>20 Sided Die</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className='col-sm-4'>
-                            <div className='form-group'>
-                                <label htmlFor='poolSize'>Pool Size  </label>
-                                <select className = 'form-control' name='poolSize'  value={this.state.poolSize}  onChange = {this.updatePoolSize}>
-                                    <option value='1'>1 Die</option>
-                                    <option value='2'>2 Die</option>
-                                    <option value='3'>3 Die</option>
-                                    <option value='4'>4 Die</option>
-                                    <option value='5'>5 Die</option>
-                                    <option value='6'>6 Die</option>
-                                    <option value='7'>7 Die</option>
-                                    <option value='8'>8 Die</option>
-                                    <option value='9'>9 Die</option>
-                                    <option value='10'>10 Die</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className='col-sm-4'>
-                            <div className='form-group'>
-                                <label htmlFor='target'>Target Number  </label>
-                                <select className = 'form-control' name='target'  value={this.state.updateTarget}  onChange = {this.updateTarget}>
-                                    <option value='1'>1</option>
-                                    <option value='2'>2</option>
-                                    <option value='3'>3</option>
-                                    <option value='4'>4</option>
-                                    <option value='5'>5</option>
-                                    <option value='6'>6</option>
-                                    <option value='7'>7</option>
-                                    <option value='8'>8</option>
-                                    <option value='9'>9</option>
-                                    <option value='10'>10</option>
-                                    <option value='11'>11</option>
-                                    <option value='12'>12</option>
-                                    <option value='13'>13</option>
-                                    <option value='14'>14</option>
-                                    <option value='15'>15</option>
-                                    <option value='16'>16</option>
-                                    <option value='17'>17</option>
-                                    <option value='18'>18</option>
-                                    <option value='19'>19</option>
-                                    <option value='20'>20</option>
-                                </select>
-                            </div>
-                        </div>
+                        {rolls.map((x, index)=>{
+                            return <Dice
+                                roll = {x}
+                                target = {target}
+                                sides = {sides}
+                                crit = {crit}
+                                success = {success}
+                                botch = {botch}
+                                key = {index}
+                            />
+                        })}
                     </div>
-                </form>
-                <div className='row my-4'>
-                    <div className ='col'>
-                        <button className='btn btn-outline-primary btn-lg btn-block' onClick={this.updateRolls}>Roll!</button>
-                    </div>
-                </div>
-                <div className='row'>
-                    {rolls.map((x, index)=>{
-                        return <Dice
-                            roll = {x}
-                            target = {target}
-                            sides = {sides}
-                            crit = {crit}
-                            success = {success}
-                            botch = {botch}
-                            key = {index}
-                        />
-                    })}
                 </div>
             </div>
         )
