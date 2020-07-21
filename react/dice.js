@@ -152,8 +152,8 @@ class DicePool extends React.Component{
 
         return(
             <div className = 'card'>
-                <div className= 'card-header my-3' data-toggle="collapse" data-target={'#dice'+id}>
-                    <div className={ 'dice-background ' + 'sides'+sides}></div>
+                <div className= 'card-header' data-toggle="collapse" data-target={'#dice'+id}>
+                    <div className={ 'badge dice-background ' + 'sides'+sides}></div>
                     <h3 className='card-title'>Dice Group Title</h3>
                 </div>
                 <div className='card-body collapse' id={'dice'+id}>
