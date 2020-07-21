@@ -9,12 +9,13 @@ class Cards extends React.Component{
             botch: false,
             success: false,
             crit: false,
-            slots: [{name:'Magic Spell'},{name:'Melee Attack'}]
+            slots: [{name:'Slot1'}]
         };
 
         this.highlightCrit = this.highlightCrit.bind(this);
         this.highlightSuccess = this.highlightSuccess.bind(this);
         this.highlightBotch = this.highlightBotch.bind(this);
+        this.addSlot = this.addSlot.bind(this);
     }
 
     highlightCrit(event){
@@ -30,6 +31,12 @@ class Cards extends React.Component{
     highlightBotch(event){
         const botch = this.state.botch;
         this.setState({botch : !botch})
+    }
+
+    addSlot(event){
+        const slots = this.state.slots;
+        slots.push({name:'Slot'+slots.length});
+        this.setState({slots})
     }
 
 
@@ -50,8 +57,9 @@ class Cards extends React.Component{
 
                     <form className="mx-4">
                         <div className='form-row'>
-                            <input placeholder='Slot Name'></input>
-                            <button type="button" className="btn btn-primary">Add a New Slot</button>
+                            <div className="col-md-4 mb-3">
+                                <button type="button" className="btn btn-primary" onClick={this.addSlot}>Add a New Slot</button>
+                            </div>
                         </div>
                         <div className='row'>
                             <div className='form-check form-check-inline'>
