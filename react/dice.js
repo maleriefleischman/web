@@ -6,32 +6,15 @@ class Cards extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            botch: false,
-            success: false,
-            crit: false,
+
             slots: [{name:'Slot1'}]
         };
 
-        this.highlightCrit = this.highlightCrit.bind(this);
-        this.highlightSuccess = this.highlightSuccess.bind(this);
-        this.highlightBotch = this.highlightBotch.bind(this);
+
         this.addSlot = this.addSlot.bind(this);
     }
 
-    highlightCrit(event){
-        const crit = this.state.crit;
-        this.setState({crit : !crit})
-    }
 
-    highlightSuccess(event){
-        const success = this.state.success;
-        this.setState({success : !success})
-    }
-
-    highlightBotch(event){
-        const botch = this.state.botch;
-        this.setState({botch : !botch})
-    }
 
     addSlot(event){
         const slots = this.state.slots;
@@ -61,38 +44,11 @@ class Cards extends React.Component{
                                 <button type="button" className="btn btn-primary" onClick={this.addSlot}>Add a New Slot</button>
                             </div>
                         </div>
-                        <div className='row'>
-                            <div className='form-check form-check-inline'>
-
-                                <input className="form-check-input" type="checkbox" id="botch" onClick={this.highlightBotch}></input>
-                                <label className="form-check-label" htmlFor="botch">
-                                    Highlight Botches
-                                </label>
-
-                            </div>
-                            <div className='form-check form-check-inline'>
-
-                                <input className="form-check-input" type="checkbox" id="success" onClick={this.highlightSuccess}></input>
-                                <label className="form-check-label" htmlFor="success">
-                                    Highlight Successes
-                                </label>
-
-                            </div>
-                            <div className='form-check form-check-inline'>
-                                <input className="form-check-input" type="checkbox" id="crit" onClick={this.highlightCrit}></input>
-                                <label className="form-check-label" htmlFor="crit">
-                                    Highlight Crits
-                                </label>
-                            </div>
-                        </div>
                     </form>
                 </div>
                 <div className='row'>
                         {slots.map((x,index)=>{
                             return <DicePool
-                                crit = {crit}
-                                success = {success}
-                                botch = {botch}
                                 key = {index}
                                 id = {index}
                             />
@@ -113,7 +69,10 @@ class DicePool extends React.Component{
             sides: 20,
             rolls:[],
             target: 0,
-            name: 'Slot'
+            name: 'Slot'+ this.props.id,
+            botch: false,
+            success: false,
+            crit: false
 
         };
 
@@ -122,6 +81,9 @@ class DicePool extends React.Component{
         this.updateRolls = this.updateRolls.bind(this);
         this.updateTarget = this.updateTarget.bind(this);
         this.updateName = this.updateName.bind(this);
+        this.highlightCrit = this.highlightCrit.bind(this);
+        this.highlightSuccess = this.highlightSuccess.bind(this);
+        this.highlightBotch = this.highlightBotch.bind(this);
 
     }
 
@@ -160,13 +122,28 @@ class DicePool extends React.Component{
         })
     }
 
+    highlightCrit(event){
+        const crit = this.state.crit;
+        this.setState({crit : !crit})
+    }
+
+    highlightSuccess(event){
+        const success = this.state.success;
+        this.setState({success : !success})
+    }
+
+    highlightBotch(event){
+        const botch = this.state.botch;
+        this.setState({botch : !botch})
+    }
+
     render(){
         const sides = this.state.sides;
         const rolls = this.state.rolls;
         const target = this.state.target;
-        const crit = this.props.crit;
-        const success = this.props.success;
-        const botch = this.props.botch;
+        const crit = this.state.crit;
+        const success = this.state.success;
+        const botch = this.state.botch;
         const id = this.props.id;
 
 
@@ -179,8 +156,8 @@ class DicePool extends React.Component{
                             <div className={ 'dice-background ' + 'sides'+sides}></div>
                         </div>
                         <div className='col-11'>
-                            <h3 className='card-title'>{this.state.name}</h3>
-                            <input onChange={this.updateName}></input>
+                            <label for="dicepoolTitle">Title:</label>
+                            <input placeholder={this.state.name} type='text' name='dicepoolTitle' onChange={this.updateName}></input>
                         </div>
                     </div>
                 </div>
@@ -243,6 +220,30 @@ class DicePool extends React.Component{
                                         <option value='20'>20</option>
                                     </select>
                                 </div>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='form-check form-check-inline'>
+
+                                <input className="form-check-input" type="checkbox" id={'botch'+this.props.id} onClick={this.highlightBotch}></input>
+                                <label className="form-check-label" htmlFor={'botch'+this.props.id}>
+                                    Highlight Botches
+                                </label>
+
+                            </div>
+                            <div className='form-check form-check-inline'>
+
+                                <input className="form-check-input" type="checkbox" id={'success'+this.props.id} onClick={this.highlightSuccess}></input>
+                                <label className="form-check-label" htmlFor={'success'+this.props.id} >
+                                    Highlight Successes
+                                </label>
+
+                            </div>
+                            <div className='form-check form-check-inline'>
+                                <input className="form-check-input" type="checkbox" id={"crit"+this.props.id} onClick={this.highlightCrit}></input>
+                                <label className="form-check-label" htmlFor={"crit"+this.props.id} >
+                                    Highlight Crits
+                                </label>
                             </div>
                         </div>
                     </form>
