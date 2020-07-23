@@ -113,6 +113,7 @@ class DicePool extends React.Component{
             sides: 20,
             rolls:[],
             target: 0,
+            name: 'Slot'
 
         };
 
@@ -120,6 +121,7 @@ class DicePool extends React.Component{
         this.updateSides = this.updateSides.bind(this);
         this.updateRolls = this.updateRolls.bind(this);
         this.updateTarget = this.updateTarget.bind(this);
+        this.updateName = this.updateName.bind(this);
 
     }
 
@@ -152,6 +154,12 @@ class DicePool extends React.Component{
 
     }
 
+    updateName(event){
+        this.setState({
+            name: event.target.value
+        })
+    }
+
     render(){
         const sides = this.state.sides;
         const rolls = this.state.rolls;
@@ -171,7 +179,8 @@ class DicePool extends React.Component{
                             <div className={ 'dice-background ' + 'sides'+sides}></div>
                         </div>
                         <div className='col-11'>
-                            <h3 className='card-title'>Dice Group Title</h3>
+                            <h3 className='card-title'>{this.state.name}</h3>
+                            <input onChange={this.updateName}></input>
                         </div>
                     </div>
                 </div>
