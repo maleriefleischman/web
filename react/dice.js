@@ -84,6 +84,7 @@ class DicePool extends React.Component{
         this.highlightCrit = this.highlightCrit.bind(this);
         this.highlightSuccess = this.highlightSuccess.bind(this);
         this.highlightBotch = this.highlightBotch.bind(this);
+        this.clearRolls = this.clearRolls.bind(this);
 
     }
 
@@ -137,6 +138,10 @@ class DicePool extends React.Component{
         this.setState({botch : !botch})
     }
 
+    clearRolls(event){
+        this.setState({rolls:[]})
+    }
+
     render(){
         const sides = this.state.sides;
         const rolls = this.state.rolls;
@@ -158,6 +163,7 @@ class DicePool extends React.Component{
                         <div className='col-11'>
                             <label for="dicepoolTitle">Title:</label>
                             <input placeholder={this.state.name} type='text' name='dicepoolTitle' onChange={this.updateName}></input>
+                            {rolls.length ? <button className='btn btn-outline-danger clear-rolls' aria-describedby='clear rolls' onClick={this.clearRolls}>Clear Rolls</button> : null}
                         </div>
                     </div>
                 </div>
