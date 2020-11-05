@@ -15,8 +15,10 @@
     "@babel/core": "^7.10.5",
     "aos": "^2.3.4",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
     "bluebird": "^3.7.2",
     "bootstrap": "^4.5.0",
     "browserify": "^16.5.1",
@@ -42,8 +44,5 @@
     "uglifyify": "^5.0.2",
     "validator": "^10.11.0"
   },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babelify": "^8.0.0"
-  }
+  "devDependencies": {}
 }
