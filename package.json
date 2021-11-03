@@ -42,7 +42,7 @@
     "serve-favicon": "^2.5.0",
     "uglify-js": "^3.10.0",
     "uglifyify": "^5.0.2",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {}
 }
